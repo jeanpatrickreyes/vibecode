@@ -20,13 +20,13 @@ export function LandingHeader() {
 				<div className="flex items-center justify-between h-16">
 					{/* Left section */}
 					<div className="flex items-center gap-4 sm:gap-6">
-						<Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+						<Link to="/" className="hover:opacity-80 transition-opacity">
 							<img
 								src={logoImage}
 								alt="Wasfai"
-								className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 brightness-110 contrast-125"
+								className="brightness-110 contrast-125"
+								style={{ width: '200px', height: '140px' }}
 							/>
-							<span className="text-xl sm:text-2xl md:text-3xl font-semibold">Wasfai</span>
 						</Link>
 						
 						{/* Navigation - hidden on mobile */}
@@ -84,7 +84,7 @@ export function LandingHeader() {
 									/>
 									<div
 										className={clsx(
-											'absolute z-50 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden',
+											'absolute z-50 mt-2 w-40 bg-[#1e3a5f] rounded-lg shadow-lg border border-white/20 overflow-hidden',
 											isRTL ? 'left-0' : 'right-0'
 										)}
 									>
@@ -94,8 +94,8 @@ export function LandingHeader() {
 												setShowLangMenu(false);
 											}}
 											className={clsx(
-												'w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors',
-												language === 'ar' && 'bg-gray-50 font-medium'
+												'w-full text-left px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors',
+												language === 'ar' && 'bg-white/20 font-medium'
 											)}
 										>
 											العربية
@@ -106,8 +106,8 @@ export function LandingHeader() {
 												setShowLangMenu(false);
 											}}
 											className={clsx(
-												'w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors',
-												language === 'en' && 'bg-gray-50 font-medium'
+												'w-full text-left px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors',
+												language === 'en' && 'bg-white/20 font-medium'
 											)}
 										>
 											English

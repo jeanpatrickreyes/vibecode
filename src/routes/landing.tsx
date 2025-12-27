@@ -529,13 +529,13 @@ export default function Landing() {
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-12 mb-8">
 						{/* Brand */}
 						<div className="lg:col-span-2">
-							<div className="flex items-center gap-3 mb-4">
+							<div className="mb-4">
 								<img
 									src={logoImage}
 									alt="Wasfai"
-									className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 brightness-110 contrast-125"
+									className="brightness-110 contrast-125"
+									style={{ width: '200px', height: '140px' }}
 								/>
-								<span className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#1e3a5f]">Wasfai</span>
 							</div>
 							<p className="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed max-w-md">
 								{t('footer.tagline')}
