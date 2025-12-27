@@ -80,6 +80,20 @@ export function LoginModal({
 	const showGitHub = authProviders?.github && hasOAuth;
 	const showGoogle = authProviders?.google && hasOAuth;
 
+	// Debug logging (can be removed in production)
+	useEffect(() => {
+		if (isOpen) {
+			console.log('Auth Modal Debug:', {
+				authProviders,
+				hasOAuth,
+				showGoogle,
+				showGitHub,
+				hasEmailAuth,
+				mode
+			});
+		}
+	}, [isOpen, authProviders, hasOAuth, showGoogle, showGitHub, hasEmailAuth, mode]);
+
 	const resetForm = () => {
 		setEmail('');
 		setPassword('');
