@@ -55,12 +55,7 @@ export function GlobalHeader() {
 								<img
 									src={logoImage}
 									alt="Logo"
-									className="flex-shrink-0 mx-auto transition-all duration-300"
-									style={{
-										width: '28px',
-										height: '28px',
-										marginLeft: '8px',
-									}}
+									className="flex-shrink-0 ml-2 md:ml-3 transition-all duration-300 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 brightness-110 contrast-125 drop-shadow-sm"
 								/>
 								{hasMaintenanceMessage && (
 									<button
