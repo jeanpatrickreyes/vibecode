@@ -9,6 +9,7 @@ import { X, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { createPortal } from 'react-dom';
 import clsx from 'clsx';
 import { useAuth } from '@/contexts/auth-context';
+import { useLanguage } from '@/contexts/language-context';
 // import {
 // 	validateEmail,
 // 	validatePassword,
@@ -56,6 +57,8 @@ export function LoginModal({
 	showCloseButton = true,
 }: LoginModalProps) {
 	const { authProviders, hasOAuth, requiresEmailAuth } = useAuth();
+	const { language, t } = useLanguage();
+	const isRTL = language === 'ar';
 	const [mode, setMode] = useState<AuthMode>('login');
 	const [showPassword, setShowPassword] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
@@ -105,30 +108,30 @@ export function LoginModal({
 		// Basic email validation
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!email.trim()) {
-			errors.email = 'Email is required';
+			errors.email = t('auth.emailRequired');
 		} else if (!emailRegex.test(email)) {
-			errors.email = 'Invalid email format';
+			errors.email = t('auth.emailInvalid');
 		}
 
 		// Basic password validation
 		if (!password) {
-			errors.password = 'Password is required';
+			errors.password = t('auth.passwordRequired');
 		} else if (password.length < 8) {
-			errors.password = 'Password must be at least 8 characters';
+			errors.password = t('auth.passwordMinLength');
 		}
 
 		// Additional validation for registration
 		if (mode === 'register') {
 			// Name validation
 			if (!name.trim()) {
-				errors.name = 'Name is required';
+				errors.name = t('auth.nameRequired');
 			} else if (name.trim().length < 2) {
-				errors.name = 'Name must be at least 2 characters';
+				errors.name = t('auth.nameMinLength');
 			}
 
 			// Confirm password validation
 			if (password !== confirmPassword) {
-				errors.confirmPassword = 'Passwords do not match';
+				errors.confirmPassword = t('auth.passwordsDontMatch');
 			}
 		}
 
@@ -189,13 +192,19 @@ export function LoginModal({
 						transition={{ type: 'spring', duration: 0.5 }}
 						className="relative z-10 w-full max-w-md mx-auto my-8"
 					>
-						<div className="bg-bg-3/95 backdrop-blur-xl text-text-primary border border-border-primary/50 rounded-2xl shadow-2xl overflow-hidden">
+						<div className={clsx(
+							'bg-bg-3/95 backdrop-blur-xl text-text-primary border border-border-primary/50 rounded-2xl shadow-2xl overflow-hidden',
+							isRTL && 'text-right'
+						)}>
 							{/* Header */}
 							<div className="relative p-6 pb-0">
 								{showCloseButton && (
 									<button
 										onClick={handleClose}
-										className="absolute right-4 top-4 p-2 rounded-lg hover:bg-accent transition-colors"
+										className={clsx(
+											'absolute top-4 p-2 rounded-lg hover:bg-accent transition-colors',
+											isRTL ? 'left-4' : 'right-4'
+										)}
 									>
 										<X className="h-4 w-4" />
 									</button>
@@ -219,17 +228,17 @@ export function LoginModal({
 									</div>
 									<h2 className="text-2xl font-semibold mb-2">
 										{actionContext
-											? `Sign in ${actionContext}`
+											? `${t('auth.signInRequired')} ${actionContext}`
 											: hasEmailAuth && mode === 'register'
-											? 'Create an account'
-											: 'Welcome back'}
+											? t('auth.createAccount')
+											: t('auth.welcomeBack')}
 									</h2>
 									<p className="text-text-tertiary">
 										{actionContext
-											? 'Authentication required for this action'
+											? t('auth.authRequired')
 											: hasEmailAuth && mode === 'register'
-											? 'Join to start building amazing applications'
-											: 'Sign in to save your apps and access your workspace'}
+											? t('auth.joinToStart')
+											: t('auth.signInToSave')}
 									</p>
 								</div>
 							</div>
@@ -267,7 +276,7 @@ export function LoginModal({
 											/>
 										</svg>
 										<span className="font-medium">
-											Continue with GitHub
+											{t('auth.continueWithGitHub')}
 										</span>
 									</div>
 									<div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full transition-transform duration-700" />
@@ -305,7 +314,7 @@ export function LoginModal({
 											/>
 										</svg>
 										<span className="font-medium">
-											Continue with Google
+											{t('auth.continueWithGoogle')}
 										</span>
 									</div>
 									<div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gray-100 dark:via-gray-800 to-transparent group-hover:translate-x-full transition-transform duration-700" />
@@ -319,7 +328,7 @@ export function LoginModal({
 											<div className="w-full border-t border-border" />
 										</div>
 										<div className="relative flex justify-center text-xs uppercase">
-											<span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+											<span className="bg-background px-2 text-muted-foreground">{t('auth.continueWith')}</span>
 										</div>
 									</div>
 								)}
@@ -331,7 +340,7 @@ export function LoginModal({
 											<div>
 												<input
 													type="text"
-													placeholder="Full name"
+													placeholder={t('auth.fullNamePlaceholder')}
 													value={name}
 													onChange={(e) => setName(e.target.value)}
 													className={clsx(
@@ -339,6 +348,7 @@ export function LoginModal({
 														validationErrors.name ? 'border-destructive' : 'border-border focus:border-primary'
 													)}
 													disabled={isLoading}
+													dir={isRTL ? 'rtl' : 'ltr'}
 												/>
 												{validationErrors.name && (
 													<p className="mt-1 text-sm text-destructive">{validationErrors.name}</p>
@@ -349,7 +359,7 @@ export function LoginModal({
 										<div>
 											<input
 												type="email"
-												placeholder="Email address"
+												placeholder={t('auth.emailPlaceholder')}
 												value={email}
 												onChange={(e) => setEmail(e.target.value)}
 												className={clsx(
@@ -357,6 +367,7 @@ export function LoginModal({
 													validationErrors.email ? 'border-destructive' : 'border-border focus:border-primary'
 												)}
 												disabled={isLoading}
+												dir="ltr"
 											/>
 											{validationErrors.email && (
 												<p className="mt-1 text-sm text-destructive">{validationErrors.email}</p>
@@ -366,19 +377,24 @@ export function LoginModal({
 										<div className="relative">
 											<input
 												type={showPassword ? 'text' : 'password'}
-												placeholder="Password"
+												placeholder={t('auth.passwordPlaceholder')}
 												value={password}
 												onChange={(e) => setPassword(e.target.value)}
 												className={clsx(
-													'w-full p-3 pr-10 rounded-lg border bg-background transition-colors',
+													'w-full p-3 rounded-lg border bg-background transition-colors',
+													isRTL ? 'pl-10' : 'pr-10',
 													validationErrors.password ? 'border-destructive' : 'border-border focus:border-primary'
 												)}
 												disabled={isLoading}
+												dir="ltr"
 											/>
 											<button
 												type="button"
 												onClick={() => setShowPassword(!showPassword)}
-												className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+												className={clsx(
+													'absolute top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground',
+													isRTL ? 'left-3' : 'right-3'
+												)}
 												disabled={isLoading}
 											>
 												{showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -392,7 +408,7 @@ export function LoginModal({
 											<div>
 												<input
 													type="password"
-													placeholder="Confirm password"
+													placeholder={t('auth.confirmPasswordPlaceholder')}
 													value={confirmPassword}
 													onChange={(e) => setConfirmPassword(e.target.value)}
 													className={clsx(
@@ -400,6 +416,7 @@ export function LoginModal({
 														validationErrors.confirmPassword ? 'border-destructive' : 'border-border focus:border-primary'
 													)}
 													disabled={isLoading}
+													dir="ltr"
 												/>
 												{validationErrors.confirmPassword && (
 													<p className="mt-1 text-sm text-destructive">{validationErrors.confirmPassword}</p>
@@ -414,8 +431,8 @@ export function LoginModal({
 											className="w-full bg-primary hover:bg-primary/90 text-primary-foreground p-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
 										>
 											{isLoading 
-												? (mode === 'register' ? 'Creating account...' : 'Signing in...')
-												: (mode === 'register' ? 'Create account' : 'Sign in')
+												? (mode === 'register' ? t('auth.creatingAccount') : t('auth.signingIn'))
+												: (mode === 'register' ? t('auth.createAccount') : t('auth.signIn'))
 											}
 										</motion.button>
 									</form>
@@ -439,27 +456,27 @@ export function LoginModal({
 											className="text-sm text-text-tertiary hover:text-text-primary transition-colors"
 										>
 											{mode === 'login' 
-												? "Don't have an account? Sign up" 
-												: "Already have an account? Sign in"
+												? t('auth.noAccount')
+												: t('auth.haveAccount')
 											}
 										</button>
 									</div>
 								)}
 
 								<p className="text-center text-xs text-text-tertiary">
-									By continuing, you agree to our{' '}
+									{t('auth.agreeToTerms')}{' '}
 									<a
 										href="#"
 										className="underline hover:text-text-primary"
 									>
-										Terms of Service
+										{t('auth.termsOfService')}
 									</a>{' '}
-									and{' '}
+									{t('auth.and')}{' '}
 									<a
 										href="#"
 										className="underline hover:text-text-primary"
 									>
-										Privacy Policy
+										{t('auth.privacyPolicy')}
 									</a>
 								</p>
 							</div>

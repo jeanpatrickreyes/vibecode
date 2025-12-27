@@ -5,11 +5,13 @@ import logoImage from '@/assets/provider-logos/logo.png';
 import { useLanguage } from '@/contexts/language-context';
 import { useAuth } from '@/contexts/auth-context';
 import { AuthButton } from '../auth/auth-button';
+import { useAuthModal } from '../auth/AuthModalProvider';
 import clsx from 'clsx';
 
 export function LandingHeader() {
 	const { language, setLanguage, t } = useLanguage();
 	const { user } = useAuth();
+	const { showAuthModal } = useAuthModal();
 	const [showLangMenu, setShowLangMenu] = useState(false);
 
 	const isRTL = language === 'ar';
@@ -119,12 +121,12 @@ export function LandingHeader() {
 
 						{/* CTA buttons */}
 						{!user && (
-							<Link
-								to="#"
+							<button
+								onClick={() => showAuthModal()}
 								className="px-3 sm:px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors text-sm"
 							>
 								{t('header.login')}
-							</Link>
+							</button>
 						)}
 						
 						{user && <AuthButton />}
