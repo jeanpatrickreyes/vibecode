@@ -2,6 +2,7 @@ import type { RouteObject } from 'react-router';
 import React from 'react';
 
 import App from './App';
+import Landing from './routes/landing';
 import Home from './routes/home';
 import Chat from './routes/chat/chat';
 import Profile from './routes/profile';
@@ -18,6 +19,10 @@ const routes = [
 		children: [
 			{
 				index: true,
+				Component: Landing,
+			},
+			{
+				path: 'home',
 				Component: Home,
 			},
 			{

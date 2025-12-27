@@ -12,6 +12,12 @@ interface AppLayoutProps {
 
 export function AppLayout({ children }: AppLayoutProps) {
   const { pathname } = useLocation();
+  const isLandingPage = pathname === '/';
+  
+  if (isLandingPage) {
+    return <>{children || <Outlet />}</>;
+  }
+  
   return (
     <AppsDataProvider>
       <SidebarProvider 
