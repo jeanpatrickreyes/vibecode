@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { Globe, ChevronDown, Plus, ArrowRight } from 'lucide-react';
+import { Globe, ChevronDown } from 'lucide-react';
 import logoImage from '@/assets/provider-logos/logo.png';
 import { useLanguage } from '@/contexts/language-context';
 import { useAuth } from '@/contexts/auth-context';
@@ -24,10 +24,9 @@ export function LandingHeader() {
 							<img
 								src={logoImage}
 								alt="Wasfai"
-								className="h-8 w-8 sm:h-10 sm:w-10 brightness-110 contrast-125"
+								className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 brightness-110 contrast-125"
 							/>
-							<span className="text-lg sm:text-xl font-semibold">Wasfai</span>
-							<Plus className="h-4 w-4 sm:h-5 sm:w-5" />
+							<span className="text-xl sm:text-2xl md:text-3xl font-semibold">Wasfai</span>
 						</Link>
 						
 						{/* Navigation - hidden on mobile */}
@@ -120,21 +119,12 @@ export function LandingHeader() {
 
 						{/* CTA buttons */}
 						{!user && (
-							<>
-								<Link
-									to="#"
-									className="hidden sm:inline-flex items-center gap-1 px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors text-sm"
-								>
-									{t('header.startNow')}
-									<ArrowRight className="h-4 w-4" />
-								</Link>
-								<Link
-									to="#"
-									className="px-3 sm:px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors text-sm"
-								>
-									{t('header.login')}
-								</Link>
-							</>
+							<Link
+								to="#"
+								className="px-3 sm:px-4 py-1.5 rounded-md hover:bg-white/10 transition-colors text-sm"
+							>
+								{t('header.login')}
+							</Link>
 						)}
 						
 						{user && <AuthButton />}

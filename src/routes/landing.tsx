@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import { ArrowRight, Clock, Check, X, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, Star, MapPin, Instagram, Youtube, Linkedin, Twitter, Plus, Globe } from 'lucide-react';
+import { ArrowRight, Clock, Check, X, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, Star, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { useAuth } from '@/contexts/auth-context';
 import { MAX_AGENT_QUERY_LENGTH, SUPPORTED_IMAGE_MIME_TYPES, type ProjectType } from '@/api-types';
@@ -526,17 +526,16 @@ export default function Landing() {
 			{/* Footer */}
 			<footer className="bg-white border-t border-gray-200 py-12 sm:py-16">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-8">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-12 mb-8">
 						{/* Brand */}
 						<div className="lg:col-span-2">
-							<div className="flex items-center gap-2 mb-4">
+							<div className="flex items-center gap-3 mb-4">
 								<img
 									src={logoImage}
 									alt="Wasfai"
-									className="h-8 w-8 sm:h-10 sm:w-10 brightness-110 contrast-125"
+									className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 brightness-110 contrast-125"
 								/>
-								<span className="text-lg sm:text-xl font-semibold text-[#1e3a5f]">Wasfai</span>
-								<Plus className="h-4 w-4 sm:h-5 sm:w-5 text-[#1e3a5f]" />
+								<span className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#1e3a5f]">Wasfai</span>
 							</div>
 							<p className="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed max-w-md">
 								{t('footer.tagline')}
@@ -597,7 +596,7 @@ export default function Landing() {
 						</div>
 
 						{/* Account */}
-						<div className="hidden lg:block">
+						<div>
 							<h3 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">{t('footer.account')}</h3>
 							<ul className="space-y-2 text-sm sm:text-base">
 								<li><a href="/profile" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.dashboard')}</a></li>
@@ -608,19 +607,6 @@ export default function Landing() {
 								<li><a href="#pricing" className="text-[#1e3a5f] hover:underline font-medium">{t('footer.account.upgrade')}</a></li>
 							</ul>
 						</div>
-					</div>
-
-					{/* Account column - separate on mobile */}
-					<div className="mb-8 lg:hidden">
-						<h3 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">{t('footer.account')}</h3>
-						<ul className="space-y-2 text-sm sm:text-base">
-							<li><a href="/profile" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.dashboard')}</a></li>
-							<li><a href="/profile" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.profile')}</a></li>
-							<li><a href="/settings" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.settings')}</a></li>
-							<li><a href="/apps" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.projects')}</a></li>
-							<li><a href="/settings" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.billing')}</a></li>
-							<li><a href="#pricing" className="text-[#1e3a5f] hover:underline font-medium">{t('footer.account.upgrade')}</a></li>
-						</ul>
 					</div>
 
 					{/* Bottom bar */}
