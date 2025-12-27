@@ -3,7 +3,7 @@
  * Supports both OAuth and email/password authentication with backward compatibility
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { createPortal } from 'react-dom';
@@ -89,6 +89,15 @@ export function LoginModal({
 		setShowPassword(false);
 		if (onClearError) onClearError();
 	};
+
+	// Reset to login mode when modal opens
+	useEffect(() => {
+		if (isOpen) {
+			setMode('login');
+			resetForm();
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isOpen]);
 
 	const handleClose = () => {
 		resetForm();
@@ -255,8 +264,9 @@ export function LoginModal({
 
 							{/* Authentication Options */}
 							<div className={clsx('p-6 space-y-5 pt-12')}>
+								{/* OAuth buttons - show in both login and register modes */}
 								{/* GitHub */}
-								{showGitHub && (
+								{showGitHub && mode === 'login' && (
 									<motion.button
 										whileTap={{ scale: 0.98 }}
 										onClick={() => handleOAuthClick('github')}
@@ -283,7 +293,7 @@ export function LoginModal({
 								</motion.button>
 								)}
 
-								{/* Google */}
+								{/* Google - show in both login and register modes */}
 								{showGoogle && (
 									<motion.button
 									whileTap={{ scale: 0.98 }}
