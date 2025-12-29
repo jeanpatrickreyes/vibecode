@@ -12,6 +12,7 @@ import { useLanguage } from '@/contexts/language-context';
 import { LandingHeader } from '@/components/landing/landing-header';
 import clsx from 'clsx';
 import logoImage from '@/assets/provider-logos/logo.png';
+import currencyImage from '@/assets/currency.jpg';
 
 export default function Landing() {
 	const navigate = useNavigate();
@@ -374,9 +375,10 @@ export default function Landing() {
 						{/* Free Plan */}
 						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200">
 							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.free.title')}</h3>
-							<div className="mb-4">
+							<div className="mb-4 flex items-baseline gap-2">
 								<span className="text-3xl sm:text-4xl font-bold text-gray-900">0</span>
-								<span className="text-base sm:text-lg text-gray-600 ml-2">{t('pricing.free.price').split(' ').slice(1).join(' ')}</span>
+								<img src={currencyImage} alt="currency" className="h-5 sm:h-6 w-auto object-contain" />
+								<span className="text-base sm:text-lg text-gray-600">/ {isRTL ? 'شهر' : 'month'}</span>
 							</div>
 							<p className="text-sm sm:text-base text-gray-600 mb-6">{t('pricing.free.desc')}</p>
 							<ul className="space-y-3 mb-6">
@@ -387,10 +389,6 @@ export default function Landing() {
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
 									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.subdomain')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.hosting')}</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -416,9 +414,10 @@ export default function Landing() {
 								{t('pricing.pro.popular')}
 							</div>
 							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.pro.title')}</h3>
-							<div className="mb-4">
-								<span className="text-3xl sm:text-4xl font-bold text-gray-900">49</span>
-								<span className="text-base sm:text-lg text-gray-600 ml-2">{t('pricing.pro.price').split(' ').slice(1).join(' ')}</span>
+							<div className="mb-4 flex items-baseline gap-2">
+								<span className="text-3xl sm:text-4xl font-bold text-gray-900">99</span>
+								<img src={currencyImage} alt="currency" className="h-5 sm:h-6 w-auto object-contain" />
+								<span className="text-base sm:text-lg text-gray-600">/ {isRTL ? 'شهر' : 'month'}</span>
 							</div>
 							<p className="text-sm sm:text-base text-gray-600 mb-6">{t('pricing.pro.desc')}</p>
 							<ul className="space-y-3 mb-6">
@@ -455,9 +454,10 @@ export default function Landing() {
 						{/* Business Plan */}
 						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200">
 							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.business.title')}</h3>
-							<div className="mb-4">
-								<span className="text-3xl sm:text-4xl font-bold text-gray-900">199</span>
-								<span className="text-base sm:text-lg text-gray-600 ml-2">{t('pricing.business.price').split(' ').slice(1).join(' ')}</span>
+							<div className="mb-4 flex items-baseline gap-2">
+								<span className="text-3xl sm:text-4xl font-bold text-gray-900">299</span>
+								<img src={currencyImage} alt="currency" className="h-5 sm:h-6 w-auto object-contain" />
+								<span className="text-base sm:text-lg text-gray-600">/ {isRTL ? 'شهر' : 'month'}</span>
 							</div>
 							<p className="text-sm sm:text-base text-gray-600 mb-6">{t('pricing.business.desc')}</p>
 							<ul className="space-y-3 mb-6">
