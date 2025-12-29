@@ -574,11 +574,11 @@ export default function Landing() {
 							<h3 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">{t('footer.company')}</h3>
 							<ul className="space-y-2 text-sm sm:text-base">
 								<li><Link to="/about" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.about')}</Link></li>
-								<li><a href="/careers" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.jobs')}</a></li>
-								<li><a href="/press" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.press')}</a></li>
-								<li><a href="/partners" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.partners')}</a></li>
+								<li><Link to="/careers" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.jobs')}</Link></li>
+								<li><Link to="/press" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.press')}</Link></li>
+								<li><Link to="/partners" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.partners')}</Link></li>
 								<li><Link to="/contact" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.contact')}</Link></li>
-								<li><a href="/blog" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.blog')}</a></li>
+								<li><Link to="/blog" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.blog')}</Link></li>
 							</ul>
 						</div>
 
@@ -588,10 +588,10 @@ export default function Landing() {
 							<ul className="space-y-2 text-sm sm:text-base">
 								<li><Link to="/help" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.help')}</Link></li>
 								<li><Link to="/docs" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.docs')}</Link></li>
-								<li><a href="/articles" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.articles')}</a></li>
-								<li><a href="/videos" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.videos')}</a></li>
+								<li><Link to="/articles" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.articles')}</Link></li>
+								<li><Link to="/videos" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.videos')}</Link></li>
 								<li><Link to="/faq" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.faq')}</Link></li>
-								<li><a href="/community" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.community')}</a></li>
+								<li><Link to="/community" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.community')}</Link></li>
 							</ul>
 						</div>
 
