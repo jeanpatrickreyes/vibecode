@@ -274,7 +274,7 @@ export function useChat({
 			wsUrl: string,
 			{ disableGenerate = false, isRetry = false }: { disableGenerate?: boolean; isRetry?: boolean } = {},
 		) => {
-			logger.debug(`🔌 ${isRetry ? 'Retrying' : 'Attempting'} WebSocket connection (attempt ${retryCount.current + 1}/${maxRetries + 1}):`, wsUrl);
+			logger.debug(`� ${isRetry ? 'Retrying' : 'Attempting'} WebSocket connection (attempt ${retryCount.current + 1}/${maxRetries + 1}):`, wsUrl);
 			
 			if (!wsUrl) {
 				logger.error('❌ WebSocket URL is required');
@@ -284,7 +284,7 @@ export function useChat({
 			connectionStatus.current = isRetry ? 'retrying' : 'connecting';
 
 			try {
-				logger.debug('🔗 Attempting WebSocket connection to:', wsUrl);
+				logger.debug('� Attempting WebSocket connection to:', wsUrl);
 				const ws = new WebSocket(wsUrl);
 				setWebsocket(ws);
 
@@ -334,7 +334,7 @@ export function useChat({
 
 					// Request file generation for new chats only
 					if (!disableGenerate && urlChatId === 'new') {
-						logger.debug('🔄 Starting code generation for new chat');
+						logger.debug('� Starting code generation for new chat');
 						setIsGenerating(true);
 						sendWebSocketMessage(ws, 'generate_all');
 					}
@@ -361,7 +361,7 @@ export function useChat({
 				ws.addEventListener('close', (event) => {
 					clearTimeout(connectionTimeout);
 					logger.info(
-						`🔌 WebSocket connection closed with code ${event.code}: ${event.reason || 'No reason provided'}`,
+						`� WebSocket connection closed with code ${event.code}: ${event.reason || 'No reason provided'}`,
 						event,
 					);
 					// Only handle close for the latest attempt and when we should reconnect
@@ -389,8 +389,8 @@ export function useChat({
 			connectionStatus.current = 'failed';
 			
 			if (retryCount.current >= maxRetries) {
-				logger.error(`💥 WebSocket connection failed permanently after ${maxRetries + 1} attempts`);
-				sendMessage(createAIMessage('websocket_failed', `🚨 Connection failed permanently after ${maxRetries + 1} attempts.\n\n❌ Reason: ${reason}\n\n🔄 Please refresh the page to try again.`));
+				logger.error(`� WebSocket connection failed permanently after ${maxRetries + 1} attempts`);
+				sendMessage(createAIMessage('websocket_failed', `� Connection failed permanently after ${maxRetries + 1} attempts.\n\n❌ Reason: ${reason}\n\n� Please refresh the page to try again.`));
 				
 				// Debug logging for permanent failure
 				onDebugMessage?.('error',
@@ -408,9 +408,9 @@ export function useChat({
 			const maxDelay = 30000; // Cap at 30 seconds
 			const actualDelay = Math.min(retryDelay, maxDelay);
 
-			logger.warn(`🔄 Retrying WebSocket connection in ${actualDelay / 1000}s (attempt ${retryCount.current + 1}/${maxRetries + 1})`);
+			logger.warn(`� Retrying WebSocket connection in ${actualDelay / 1000}s (attempt ${retryCount.current + 1}/${maxRetries + 1})`);
 			
-			sendMessage(createAIMessage('websocket_retrying', `🔄 Connection failed. Retrying in ${Math.ceil(actualDelay / 1000)} seconds... (attempt ${retryCount.current + 1}/${maxRetries + 1})\n\n❌ Reason: ${reason}`, true));
+			sendMessage(createAIMessage('websocket_retrying', `� Connection failed. Retrying in ${Math.ceil(actualDelay / 1000)} seconds... (attempt ${retryCount.current + 1}/${maxRetries + 1})\n\n❌ Reason: ${reason}`, true));
 
 			const timeoutId = setTimeout(() => {
 				connectWithRetryRef.current?.(wsUrl, { disableGenerate, isRetry: true });
@@ -518,7 +518,7 @@ export function useChat({
 						}
 						if (obj.websocketUrl) {
 							result.websocketUrl = obj.websocketUrl;
-							logger.debug('📡 Received WebSocket URL from server:', result.websocketUrl)
+							logger.debug('� Received WebSocket URL from server:', result.websocketUrl)
 						}
 						if (obj.behaviorType) {
 							result.behaviorType = obj.behaviorType;
