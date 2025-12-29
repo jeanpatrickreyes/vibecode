@@ -373,7 +373,7 @@ export default function Landing() {
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
 						{/* Free Plan */}
-						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200">
+						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 flex flex-col h-full">
 							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.free.title')}</h3>
 							<div className="mb-4 flex items-baseline gap-2">
 								<span className="text-3xl sm:text-4xl font-bold text-gray-900">0</span>
@@ -403,13 +403,13 @@ export default function Landing() {
 									<span className="text-sm sm:text-base text-gray-500">{t('pricing.free.branding')}</span>
 								</li>
 							</ul>
-							<button className="w-full bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors text-sm sm:text-base">
+							<button className="w-full bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors text-sm sm:text-base mt-auto">
 								{t('pricing.free.cta')}
 							</button>
 						</div>
 
 						{/* Pro Plan */}
-						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border-2 border-[#1e3a5f] relative">
+						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border-2 border-[#1e3a5f] relative flex flex-col h-full">
 							<div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1e3a5f] text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
 								{t('pricing.pro.popular')}
 							</div>
@@ -446,13 +446,13 @@ export default function Landing() {
 									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.storage')}</span>
 								</li>
 							</ul>
-							<button className="w-full bg-[#1e3a5f] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#2a4f7a] transition-colors text-sm sm:text-base">
+							<button className="w-full bg-[#1e3a5f] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#2a4f7a] transition-colors text-sm sm:text-base mt-auto">
 								{t('pricing.pro.cta')}
 							</button>
 						</div>
 
 						{/* Business Plan */}
-						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200">
+						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 flex flex-col h-full">
 							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.business.title')}</h3>
 							<div className="mb-4 flex items-baseline gap-2">
 								<span className="text-3xl sm:text-4xl font-bold text-gray-900">299</span>
@@ -486,7 +486,7 @@ export default function Landing() {
 									<span className="text-sm sm:text-base text-gray-700">{t('pricing.business.support')}</span>
 								</li>
 							</ul>
-							<button className="w-full bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors text-sm sm:text-base">
+							<button className="w-full bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors text-sm sm:text-base mt-auto">
 								{t('pricing.business.cta')}
 							</button>
 						</div>
