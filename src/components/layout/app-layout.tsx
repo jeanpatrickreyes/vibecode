@@ -14,7 +14,16 @@ export function AppLayout({ children }: AppLayoutProps) {
   const { pathname } = useLocation();
   const isLandingPage = pathname === '/';
   
-  if (isLandingPage) {
+  // Pages that should use the landing page layout (no sidebar/header)
+  const publicPages = [
+    '/features', '/pricing', '/templates', '/integrations', '/about', '/contact',
+    '/help', '/docs', '/faq', '/changelog', '/performance', '/careers', '/press',
+    '/partners', '/blog', '/articles', '/videos', '/community'
+  ];
+  
+  const isPublicPage = publicPages.some(page => pathname.startsWith(page)) || pathname.startsWith('/legal/');
+  
+  if (isLandingPage || isPublicPage) {
     return <>{children || <Outlet />}</>;
   }
   

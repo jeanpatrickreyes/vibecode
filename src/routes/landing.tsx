@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
 import { ArrowRight, Clock, Check, X, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, Star, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe } from 'lucide-react';
-import { useNavigate } from 'react-router';
+import { useNavigate, Link } from 'react-router';
 import { useAuth } from '@/contexts/auth-context';
 import { MAX_AGENT_QUERY_LENGTH, SUPPORTED_IMAGE_MIME_TYPES, type ProjectType } from '@/api-types';
 import { useAuthGuard } from '../hooks/useAuthGuard';
@@ -560,12 +560,12 @@ export default function Landing() {
 						<div>
 							<h3 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">{t('footer.product')}</h3>
 							<ul className="space-y-2 text-sm sm:text-base">
-								<li><a href="#features" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.features')}</a></li>
-								<li><a href="#pricing" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.prices')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.templates')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.integrations')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.updates')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.performance')}</a></li>
+								<li><Link to="/features" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.features')}</Link></li>
+								<li><Link to="/pricing" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.prices')}</Link></li>
+								<li><Link to="/templates" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.templates')}</Link></li>
+								<li><Link to="/integrations" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.integrations')}</Link></li>
+								<li><Link to="/changelog" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.updates')}</Link></li>
+								<li><Link to="/performance" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.product.performance')}</Link></li>
 							</ul>
 						</div>
 
@@ -573,12 +573,12 @@ export default function Landing() {
 						<div>
 							<h3 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">{t('footer.company')}</h3>
 							<ul className="space-y-2 text-sm sm:text-base">
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.about')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.jobs')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.press')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.partners')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.contact')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.blog')}</a></li>
+								<li><Link to="/about" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.about')}</Link></li>
+								<li><a href="/careers" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.jobs')}</a></li>
+								<li><a href="/press" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.press')}</a></li>
+								<li><a href="/partners" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.partners')}</a></li>
+								<li><Link to="/contact" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.contact')}</Link></li>
+								<li><a href="/blog" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.company.blog')}</a></li>
 							</ul>
 						</div>
 
@@ -586,12 +586,12 @@ export default function Landing() {
 						<div>
 							<h3 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">{t('footer.resources')}</h3>
 							<ul className="space-y-2 text-sm sm:text-base">
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.help')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.docs')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.articles')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.videos')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.faq')}</a></li>
-								<li><a href="#" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.community')}</a></li>
+								<li><Link to="/help" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.help')}</Link></li>
+								<li><Link to="/docs" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.docs')}</Link></li>
+								<li><a href="/articles" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.articles')}</a></li>
+								<li><a href="/videos" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.videos')}</a></li>
+								<li><Link to="/faq" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.faq')}</Link></li>
+								<li><a href="/community" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.resources.community')}</a></li>
 							</ul>
 						</div>
 
@@ -599,12 +599,12 @@ export default function Landing() {
 						<div>
 							<h3 className="font-semibold text-gray-900 mb-4 text-sm sm:text-base">{t('footer.account')}</h3>
 							<ul className="space-y-2 text-sm sm:text-base">
-								<li><a href="/profile" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.dashboard')}</a></li>
-								<li><a href="/profile" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.profile')}</a></li>
-								<li><a href="/settings" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.settings')}</a></li>
-								<li><a href="/apps" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.projects')}</a></li>
-								<li><a href="/settings" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.billing')}</a></li>
-								<li><a href="#pricing" className="text-[#1e3a5f] hover:underline font-medium">{t('footer.account.upgrade')}</a></li>
+								<li><Link to="/dashboard" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.dashboard')}</Link></li>
+								<li><Link to="/profile" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.profile')}</Link></li>
+								<li><Link to="/settings" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.settings')}</Link></li>
+								<li><Link to="/apps" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.projects')}</Link></li>
+								<li><Link to="/billing" className="text-gray-600 hover:text-[#1e3a5f] transition-colors">{t('footer.account.billing')}</Link></li>
+								<li><Link to="/pricing" className="text-[#1e3a5f] hover:underline font-medium">{t('footer.account.upgrade')}</Link></li>
 							</ul>
 						</div>
 					</div>
@@ -624,13 +624,13 @@ export default function Landing() {
 						<div className="text-center sm:text-right">
 							<p className="text-sm text-gray-600 mb-2">{t('footer.copyright')}</p>
 							<div className={clsx('flex items-center gap-2 text-xs text-gray-500 flex-wrap justify-center', isRTL && 'flex-row-reverse')}>
-								<a href="#" className="hover:text-[#1e3a5f] transition-colors">{t('footer.privacy')}</a>
+								<Link to="/legal/privacy" className="hover:text-[#1e3a5f] transition-colors">{t('footer.privacy')}</Link>
 								<span>•</span>
-								<a href="#" className="hover:text-[#1e3a5f] transition-colors">{t('footer.terms')}</a>
+								<Link to="/legal/terms" className="hover:text-[#1e3a5f] transition-colors">{t('footer.terms')}</Link>
 								<span>•</span>
-								<a href="#" className="hover:text-[#1e3a5f] transition-colors">{t('footer.cookies')}</a>
+								<Link to="/legal/cookies" className="hover:text-[#1e3a5f] transition-colors">{t('footer.cookies')}</Link>
 								<span>•</span>
-								<a href="#" className="hover:text-[#1e3a5f] transition-colors">{t('footer.gdpr')}</a>
+								<Link to="/legal/gdpr" className="hover:text-[#1e3a5f] transition-colors">{t('footer.gdpr')}</Link>
 							</div>
 						</div>
 					</div>
