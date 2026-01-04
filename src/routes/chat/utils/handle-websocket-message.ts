@@ -1030,8 +1030,40 @@ export function createWebSocketMessageHandler(deps: HandleMessageDeps) {
                 break;
             }
 
+            case 'static_analysis_results':
+            case 'screenshot_capture_started':
+            case 'screenshot_capture_success':
+            case 'screenshot_capture_failed':
+                // Informational messages - no action needed, just log at debug level
+                logger.debug(`Informational message received: ${message.type}`);
+                break;
+
             default:
-                logger.warn('Unhandled message:', message);
+                // Check if type is a stringified JSON (malformed message)
+                if (typeof message.type === 'string' && message.type.startsWith('{') && message.type.endsWith('}')) {
+                    try {
+                        const parsed = JSON.parse(message.type);
+                        logger.warn('Malformed message with stringified JSON type:', message);
+                        logger.debug('Parsed type:', parsed);
+                        // Try to handle based on parsed type
+                        if (parsed.type === 'cf_agent_state' && parsed.state) {
+                            // Handle as cf_agent_state message
+                            logger.debug('Handling malformed cf_agent_state message');
+                            const state = parsed.state;
+                            if (state.projectType) {
+                                setInternalProjectType(state.projectType);
+                            }
+                            if (state.shouldBeGenerating && !isGenerating) {
+                                updateStage('code', { status: 'active' });
+                            }
+                            break;
+                        }
+                    } catch (e) {
+                        logger.warn('Unhandled message (failed to parse):', message);
+                    }
+                } else {
+                    logger.warn('Unhandled message:', message);
+                }
         }
     };
 }
