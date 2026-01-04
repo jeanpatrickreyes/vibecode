@@ -647,10 +647,10 @@ export default function Chat() {
 
 	return (
 		<div className="size-full flex flex-col min-h-0 text-text-primary">
-			<div className="flex-1 flex min-h-0 overflow-hidden justify-center">
+			<div className="flex-1 flex flex-col md:flex-row min-h-0 overflow-hidden justify-center">
 				<motion.div
 					layout="position"
-					className="flex-1 shrink-0 flex flex-col basis-0 max-w-lg relative z-10 h-full min-h-0"
+					className="flex-1 shrink-0 flex flex-col basis-0 md:max-w-lg w-full relative z-10 h-full min-h-0"
 				>
 					<div 
 					className={clsx(
@@ -856,7 +856,7 @@ export default function Chat() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
-							className="flex-1 flex shrink-0 basis-0 p-4 pl-0 ml-2 z-30 min-h-0"
+							className="flex-1 flex shrink-0 basis-0 p-2 md:p-4 md:pl-0 md:ml-2 z-30 min-h-0 w-full md:w-auto"
 						>
 							<MainContentPanel
 								view={view}
