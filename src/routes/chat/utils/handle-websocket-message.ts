@@ -1033,7 +1033,8 @@ export function createWebSocketMessageHandler(deps: HandleMessageDeps) {
             case 'static_analysis_results':
             case 'screenshot_capture_started':
             case 'screenshot_capture_success':
-            case 'screenshot_capture_failed':
+            case 'screenshot_capture_error':
+            case 'screenshot_analysis_result':
                 // Informational messages - no action needed, just log at debug level
                 logger.debug(`Informational message received: ${message.type}`);
                 break;
