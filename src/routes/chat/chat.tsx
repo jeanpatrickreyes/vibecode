@@ -42,6 +42,7 @@ const isPhasicBlueprint = (blueprint?: BlueprintType | null): blueprint is Phasi
 
 export default function Chat() {
 	const { chatId: urlChatId } = useParams();
+	const { language } = useLanguage();
 
 	const [searchParams] = useSearchParams();
 	const userQuery = searchParams.get('query');
