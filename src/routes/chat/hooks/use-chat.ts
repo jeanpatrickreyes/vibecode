@@ -51,6 +51,7 @@ export function useChat({
 	query: userQuery,
 	images: userImages,
 	projectType = 'app',
+	preferredLanguage,
 	onDebugMessage,
 	onTerminalMessage,
 	onVaultUnlockRequired,
@@ -59,6 +60,7 @@ export function useChat({
 	query: string | null;
 	images?: ImageAttachment[];
 	projectType?: ProjectType;
+	preferredLanguage?: 'ar' | 'en';
 	onDebugMessage?: (type: 'error' | 'warning' | 'info' | 'websocket', message: string, details?: string, source?: string, messageType?: string, rawMessage?: unknown) => void;
 	onTerminalMessage?: (log: { id: string; content: string; type: 'command' | 'stdout' | 'stderr' | 'info' | 'error' | 'warn' | 'debug'; timestamp: number; source?: string }) => void;
 	onVaultUnlockRequired?: (reason: string) => void;
@@ -463,6 +465,7 @@ export function useChat({
 						query: userQuery,
 						projectType,
 						images: userImages, // Pass images from URL params for multi-modal blueprint
+						preferredLanguage, // Pass preferred UI language
 					});
 
 					const parser = createRepairingJSONParser();

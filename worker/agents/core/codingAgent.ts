@@ -63,6 +63,7 @@ export class CodeGeneratorAgent extends Agent<Env, AgentState> implements AgentI
         query: "",
         sessionId: '',
         hostname: '',
+        preferredLanguage: 'ar', // Default to Arabic for wasfai.com
         blueprint: {} as unknown as Blueprint,
         templateName: '',
         generatedFilesMap: {},

@@ -73,6 +73,7 @@ export class AgenticCodingBehavior extends BaseCodingBehavior<AgenticState> impl
         this.setState({
             ...this.state,
             projectName,
+            preferredLanguage: initArgs.preferredLanguage || 'ar',
             query,
             blueprint: {
                 title: baseName,

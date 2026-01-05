@@ -35,6 +35,7 @@ import { MainContentPanel } from './components/main-content-panel';
 import { ChatInput } from './components/chat-input';
 import { useVault } from '@/hooks/use-vault';
 import { VaultUnlockModal } from '@/components/vault';
+import { useLanguage } from '@/contexts/language-context';
 
 const isPhasicBlueprint = (blueprint?: BlueprintType | null): blueprint is PhasicBlueprint =>
 	!!blueprint && 'implementationRoadmap' in blueprint;
@@ -152,6 +153,7 @@ export default function Chat() {
 		query: userQuery,
 		images: userImages,
 		projectType: urlProjectType as ProjectType,
+		preferredLanguage: language,
 		onDebugMessage: addDebugMessage,
 		onVaultUnlockRequired: handleVaultUnlockRequired,
 	});

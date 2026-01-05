@@ -13,6 +13,8 @@ export interface CodeGenArgs {
     behaviorType?: BehaviorType;
     projectType?: ProjectType;
     images?: ImageAttachment[];
+    /** Preferred UI language for generated content ('ar' for Arabic, 'en' for English) */
+    preferredLanguage?: 'ar' | 'en';
 
     /** Optional ephemeral credentials (BYOK / gateway override) for sdk */
     credentials?: CredentialsPayload;

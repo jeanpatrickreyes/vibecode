@@ -143,9 +143,22 @@ export class SimpleCodeGenerationOperation extends AgentOperation<
         const existingFilesContext = formatExistingFiles(context.allFiles);
 
         // Build system message with full context
-        const systemPrompt = PROMPT_UTILS.replaceTemplateVariables(SYSTEM_PROMPT, {
+        const preferredLanguage = context.preferredLanguage || 'ar';
+        let systemPrompt = PROMPT_UTILS.replaceTemplateVariables(SYSTEM_PROMPT, {
             userQuery: context.query ? `## Requirements:\n${context.query}` : '',
         });
+        
+        // Add language-specific instructions for Arabic
+        if (preferredLanguage === 'ar') {
+            systemPrompt = `${systemPrompt}\n\n<LANGUAGE_INSTRUCTIONS>
+**IMPORTANT: This is an Arabic-first website (wasfai.com).**
+- All user-facing text, labels, buttons, headings, descriptions, and content in the generated code MUST be in Arabic.
+- All string literals displayed to users in JSX/TSX, HTML, or any UI code must be in Arabic.
+- Code comments can be in English, but all displayed text must be in Arabic.
+- Ensure proper RTL (right-to-left) layout support where applicable using dir="rtl" and appropriate CSS.
+- Use Arabic typography and ensure proper text rendering.
+</LANGUAGE_INSTRUCTIONS>`;
+        }
 
         // Build user message with requirements
         const userPrompt = PROMPT_UTILS.replaceTemplateVariables(USER_PROMPT, {

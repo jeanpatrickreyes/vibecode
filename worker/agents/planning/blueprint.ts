@@ -260,6 +260,7 @@ interface BaseBlueprintGenerationArgs {
     language: string;
     frameworks: string[];
     projectType: ProjectType;
+    preferredLanguage?: 'ar' | 'en';
     images?: ProcessedImageAttachment[];
     stream?: {
         chunk_size: number;

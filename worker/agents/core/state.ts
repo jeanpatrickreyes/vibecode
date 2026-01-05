@@ -39,6 +39,7 @@ export interface BaseProjectState {
     query: string;
     sessionId: string;
     hostname: string;
+    preferredLanguage?: 'ar' | 'en'; // UI language preference for generated content
 
     blueprint: Blueprint;
 

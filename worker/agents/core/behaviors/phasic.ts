@@ -84,6 +84,7 @@ export class PhasicCodingBehavior extends BaseCodingBehavior<PhasicState> implem
             templateMetaInfo: templateInfo?.selection,
             images: initArgs.images,
             projectType: this.projectType,
+            preferredLanguage: initArgs.preferredLanguage || 'ar',
             stream: {
                 chunk_size: 256,
                 onChunk: (chunk) => {
@@ -104,6 +105,7 @@ export class PhasicCodingBehavior extends BaseCodingBehavior<PhasicState> implem
                         
         const nextState: PhasicState = {
             ...this.state,
+            preferredLanguage: initArgs.preferredLanguage || 'ar',
             projectName,
             query,
             blueprint,

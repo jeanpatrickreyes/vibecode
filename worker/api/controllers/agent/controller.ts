@@ -172,6 +172,7 @@ export class CodingAgentController extends BaseController {
                 hostname,
                 inferenceContext,
                 images: uploadedImages,
+                preferredLanguage: body.preferredLanguage || 'ar', // Default to Arabic for wasfai.com
                 onBlueprintChunk: (chunk: string) => {
                     writer.write({chunk});
                 },

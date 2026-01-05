@@ -13,6 +13,7 @@ interface BaseGenerationContext {
     readonly templateDetails: TemplateDetails;
     readonly dependencies: Record<string, string>;
     readonly commandsHistory: string[];
+    readonly preferredLanguage?: 'ar' | 'en';
 }
 
 /** Phase-based generation context with detailed blueprint */
@@ -59,6 +60,7 @@ export const GenerationContext = {
             templateDetails,
             dependencies,
             commandsHistory: state.commandsHistory || [],
+            preferredLanguage: state.preferredLanguage || 'ar',
         };
 
         return state.behaviorType === 'phasic'
