@@ -250,6 +250,39 @@ export default function Landing() {
 				</div>
 			</section>
 
+			{/* Features Section */}
+			<section id="features" className="py-12 sm:py-16 lg:py-20 bg-white">
+				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-12">
+						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+							{t('features.title')}
+						</h2>
+						<p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+							{t('features.subtitle')}
+						</p>
+					</div>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+						{[
+							{ icon: Shield, title: t('features.hosting.title'), desc: t('features.hosting.desc') },
+							{ icon: Monitor, title: t('features.responsive.title'), desc: t('features.responsive.desc') },
+							{ icon: Zap, title: t('features.speed.title'), desc: t('features.speed.desc') },
+							{ icon: Share2, title: t('features.sharing.title'), desc: t('features.sharing.desc') },
+							{ icon: Lock, title: t('features.systems.title'), desc: t('features.systems.desc') },
+							{ icon: MessageSquare, title: t('features.edit.title'), desc: t('features.edit.desc') },
+						].map((feature, idx) => {
+							const Icon = feature.icon;
+							return (
+								<div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+									<Icon className="h-8 w-8 text-[#1e3a5f] mb-4" />
+									<h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+									<p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.desc}</p>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+			</section>
+
 			{/* Testimonials Section */}
 			<section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -325,39 +358,6 @@ export default function Landing() {
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Features Section */}
-			<section id="features" className="py-12 sm:py-16 lg:py-20 bg-white">
-				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-12">
-						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-							{t('features.title')}
-						</h2>
-						<p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-							{t('features.subtitle')}
-						</p>
-					</div>
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-						{[
-							{ icon: Shield, title: t('features.hosting.title'), desc: t('features.hosting.desc') },
-							{ icon: Monitor, title: t('features.responsive.title'), desc: t('features.responsive.desc') },
-							{ icon: Zap, title: t('features.speed.title'), desc: t('features.speed.desc') },
-							{ icon: Share2, title: t('features.sharing.title'), desc: t('features.sharing.desc') },
-							{ icon: Lock, title: t('features.systems.title'), desc: t('features.systems.desc') },
-							{ icon: MessageSquare, title: t('features.edit.title'), desc: t('features.edit.desc') },
-						].map((feature, idx) => {
-							const Icon = feature.icon;
-							return (
-								<div key={idx} className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-									<Icon className="h-8 w-8 text-[#1e3a5f] mb-4" />
-									<h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-									<p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.desc}</p>
-								</div>
-							);
-						})}
 					</div>
 				</div>
 			</section>
