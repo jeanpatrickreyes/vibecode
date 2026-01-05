@@ -91,7 +91,7 @@ export function useChat({
 	>(null);
 	const [chatId, setChatId] = useState<string>();
 	const [messages, setMessages] = useState<ChatMessage[]>([
-		createAIMessage('main', 'Thinking...', true),
+		createAIMessage('main', preferredLanguage === 'ar' ? 'جاري التفكير...' : 'Thinking...', true),
 	]);
 
 	const [bootstrapFiles, setBootstrapFiles] = useState<FileType[]>([]);
@@ -247,6 +247,7 @@ export function useChat({
 				if (!evt.path.includes('/slides/')) return;
 				window.dispatchEvent(new CustomEvent('presentation-file-event', { detail: evt }));
 			},
+			preferredLanguage,
 		} as HandleMessageDeps),
 		[
 			isInitialStateRestored,
@@ -267,6 +268,7 @@ export function useChat({
 			onTerminalMessage,
 			onVaultUnlockRequired,
 			clearDeploymentTimeout,
+			preferredLanguage,
 		],
 	);
 
@@ -492,7 +494,9 @@ export function useChat({
 					const initialBehaviorType = getBehaviorTypeForProject(projectType);
 					if (initialBehaviorType === 'phasic') {
 						sendMessage(
-							createAIMessage('main', "Sure, let's get started. Bootstrapping the project first...", true),
+							createAIMessage('main', preferredLanguage === 'ar' 
+								? "حسناً، دعنا نبدأ. جاري إعداد المشروع أولاً..." 
+								: "Sure, let's get started. Bootstrapping the project first...", true),
 						);
 					}
 
@@ -500,7 +504,9 @@ export function useChat({
                         logger.debug('Received chunk from server:', obj);
 						if (obj.chunk) {
 							if (!startedBlueprintStream) {
-								sendMessage(createAIMessage('main', 'Blueprint is being generated...', true));
+								sendMessage(createAIMessage('main', preferredLanguage === 'ar' 
+									? 'جاري إنشاء المخطط...' 
+									: 'Blueprint is being generated...', true));
 								logger.info('Blueprint stream has started');
 								setIsBootstrapping(false);
 								setIsGeneratingBlueprint(true);
@@ -546,7 +552,9 @@ export function useChat({
 					const finalBehaviorType = getBehaviorTypeForProject(projectType);
 					if (finalBehaviorType === 'phasic') {
 						sendMessage(
-							createAIMessage('main', 'Blueprint generation complete. Now starting the code generation...', true),
+							createAIMessage('main', preferredLanguage === 'ar' 
+								? 'اكتمل إنشاء المخطط. جاري بدء إنشاء الكود الآن...' 
+								: 'Blueprint generation complete. Now starting the code generation...', true),
 						);
 					}
 

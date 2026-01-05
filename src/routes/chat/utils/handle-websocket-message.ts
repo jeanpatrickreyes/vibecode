@@ -98,6 +98,7 @@ export interface HandleMessageDeps {
         source?: string
     }) => void;
     onVaultUnlockRequired?: (reason: string) => void;
+    preferredLanguage?: 'ar' | 'en';
 }
 
 export function createWebSocketMessageHandler(deps: HandleMessageDeps) {
@@ -158,6 +159,7 @@ export function createWebSocketMessageHandler(deps: HandleMessageDeps) {
             onDebugMessage,
             onTerminalMessage,
             clearDeploymentTimeout,
+            preferredLanguage,
         } = deps;
 
         // Log messages except for frequent ones
@@ -576,7 +578,10 @@ export function createWebSocketMessageHandler(deps: HandleMessageDeps) {
                 setFiles((prev) => setAllFilesCompleted(prev));
                 setProjectStages((prev) => completeStages(prev, ['code']));
 
-                sendMessage(createAIMessage('generation-complete', 'Code generation has been completed.'));
+                const message = preferredLanguage === 'ar' 
+                    ? 'اكتمل إنشاء الكود.' 
+                    : 'Code generation has been completed.';
+                sendMessage(createAIMessage('generation-complete', message));
                 
                 // Reset all phase indicators
                 setIsPhaseProgressActive(false);
@@ -607,11 +612,20 @@ export function createWebSocketMessageHandler(deps: HandleMessageDeps) {
                 const totalIssues = reviewData?.filesToFix?.reduce((count: number, file: { issues: unknown[] }) =>
                     count + file.issues.length, 0) || 0;
 
-                let reviewMessage = 'Code review complete';
-                if (reviewData?.issuesFound) {
-                    reviewMessage = `Code review complete - ${totalIssues} issue${totalIssues !== 1 ? 's' : ''} found across ${reviewData.filesToFix?.length || 0} file${reviewData.filesToFix?.length !== 1 ? 's' : ''}`;
+                let reviewMessage: string;
+                if (preferredLanguage === 'ar') {
+                    if (reviewData?.issuesFound) {
+                        reviewMessage = `اكتمل مراجعة الكود - تم العثور على ${totalIssues} مشكلة في ${reviewData.filesToFix?.length || 0} ملف`;
+                    } else {
+                        reviewMessage = 'اكتمل مراجعة الكود - لم يتم العثور على مشاكل';
+                    }
                 } else {
-                    reviewMessage = 'Code review complete - no issues found';
+                    reviewMessage = 'Code review complete';
+                    if (reviewData?.issuesFound) {
+                        reviewMessage = `Code review complete - ${totalIssues} issue${totalIssues !== 1 ? 's' : ''} found across ${reviewData.filesToFix?.length || 0} file${reviewData.filesToFix?.length !== 1 ? 's' : ''}`;
+                    } else {
+                        reviewMessage = 'Code review complete - no issues found';
+                    }
                 }
 
                 sendMessage(createAIMessage('code_reviewed', reviewMessage));
