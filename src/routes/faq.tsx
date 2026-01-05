@@ -25,7 +25,7 @@ export default function FAQPage() {
 
 				<div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
 					<Accordion type="single" collapsible className="w-full">
-						{faqItems.map((item, index) => (
+						{faqItems.map((item) => (
 							<AccordionItem key={item.id} value={item.id} className="border-b border-gray-200 last:border-b-0">
 								<AccordionTrigger className={`px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
 									<span className="font-semibold text-gray-900 text-base sm:text-lg flex-1">
