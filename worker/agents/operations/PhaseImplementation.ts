@@ -46,8 +46,22 @@ export class PhaseImplementationOperation extends AgentOperation<PhasicGeneratio
 
         const codeGenerationFormat = new SCOFFormat();
 
+        // Add language-specific instructions for Arabic
+        const preferredLanguage = context.preferredLanguage || 'ar';
+        let systemPrompt = PHASE_IMPLEMENTATION_SYSTEM_PROMPT;
+        if (preferredLanguage === 'ar') {
+            systemPrompt = `${systemPrompt}\n\n<LANGUAGE_INSTRUCTIONS>
+**IMPORTANT: This is an Arabic-first website (wasfai.com).**
+- All user-facing text, labels, buttons, headings, descriptions, and content in the generated code MUST be in Arabic.
+- All string literals displayed to users in JSX/TSX, HTML, or any UI code must be in Arabic.
+- Code comments can be in English, but all displayed text must be in Arabic.
+- Ensure proper RTL (right-to-left) layout support where applicable using dir="rtl" and appropriate CSS.
+- Use Arabic typography and ensure proper text rendering.
+</LANGUAGE_INSTRUCTIONS>`;
+        }
+
         // Build messages for generation
-        const messages = getSystemPromptWithProjectContext(PHASE_IMPLEMENTATION_SYSTEM_PROMPT, context, CodeSerializerType.SCOF, false);
+        const messages = getSystemPromptWithProjectContext(systemPrompt, context, CodeSerializerType.SCOF, false);
 
         // Create user message with optional images
         const userPrompt = buildPhaseImplementationUserPrompt({ phase, issues, userContext }) + codeGenerationFormat.formatInstructions();

@@ -106,8 +106,21 @@ export class FileRegenerationOperation extends AgentOperation<GenerationContext,
         options: OperationOptions<GenerationContext>
     ): Promise<FileGenerationOutputType> {
         try {
+            // Add language-specific instructions for Arabic
+            const preferredLanguage = options.context.preferredLanguage || 'ar';
+            let systemPrompt = SYSTEM_PROMPT;
+            if (preferredLanguage === 'ar') {
+                systemPrompt = `${systemPrompt}\n\n<LANGUAGE_INSTRUCTIONS>
+**IMPORTANT: This is an Arabic-first website (wasfai.com).**
+- When fixing user-facing text, labels, buttons, headings, or descriptions, ensure they remain in Arabic.
+- Preserve all Arabic string literals in JSX/TSX, HTML, or any UI code.
+- If adding new user-facing text during fixes, it MUST be in Arabic.
+- Preserve RTL (right-to-left) layout support (dir="rtl") where applicable.
+</LANGUAGE_INSTRUCTIONS>`;
+            }
+            
             // Use realtime code fixer to fix the file with enhanced surgical fix prompts
-            const realtimeCodeFixer = new RealtimeCodeFixer(options.env, options.inferenceContext, false, undefined, "fileRegeneration", SYSTEM_PROMPT, USER_PROMPT);
+            const realtimeCodeFixer = new RealtimeCodeFixer(options.env, options.inferenceContext, false, undefined, "fileRegeneration", systemPrompt, USER_PROMPT);
             const fixedFile = await realtimeCodeFixer.run(
                 inputs.file, {
                     previousFiles: options.context.allFiles,

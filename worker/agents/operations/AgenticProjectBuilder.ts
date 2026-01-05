@@ -215,6 +215,19 @@ export class AgenticProjectBuilderOperation extends AgentOperationWithTools<
 
         let systemPrompt = getSystemPrompt(inputs.projectType, session.dynamicHints);
 
+        // Add language-specific instructions for Arabic
+        const preferredLanguage = options.context.preferredLanguage || 'ar';
+        if (preferredLanguage === 'ar') {
+            systemPrompt = `${systemPrompt}\n\n<LANGUAGE_INSTRUCTIONS>
+**IMPORTANT: This is an Arabic-first website (wasfai.com).**
+- All user-facing text, labels, buttons, headings, descriptions, and content in the generated code MUST be in Arabic.
+- All string literals displayed to users in JSX/TSX, HTML, or any UI code must be in Arabic.
+- Code comments can be in English, but all displayed text must be in Arabic.
+- Ensure proper RTL (right-to-left) layout support where applicable using dir="rtl" and appropriate CSS.
+- Use Arabic typography and ensure proper text rendering.
+</LANGUAGE_INSTRUCTIONS>`;
+        }
+
         if (historyMessages.length > 0) {
             systemPrompt += `\n\n# Conversation History\nYou are being provided with the full conversation history from your previous interactions. Review it to understand context and avoid repeating work.`;
         }

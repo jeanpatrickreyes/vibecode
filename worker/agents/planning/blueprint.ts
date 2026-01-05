@@ -286,7 +286,7 @@ export async function generateBlueprint(args: AgenticBlueprintGenerationArgs): P
 export async function generateBlueprint(
     args: PhasicBlueprintGenerationArgs | AgenticBlueprintGenerationArgs
 ): Promise<Blueprint> {
-    const { env, inferenceContext, query, language, frameworks, templateDetails, templateMetaInfo, images, stream, projectType } = args;
+    const { env, inferenceContext, query, language, frameworks, templateDetails, templateMetaInfo, images, stream, projectType, preferredLanguage } = args;
     const isAgentic = !templateDetails || !templateMetaInfo;
     
     try {
@@ -310,6 +310,21 @@ export async function generateBlueprint(
         const projectGuidance = getProjectTypeGuidance(projectType);
         if (projectGuidance) {
             systemPrompt = `${systemPrompt}\n\n${projectGuidance}`;
+        }
+        
+        // Add language-specific instructions for Arabic
+        const lang = preferredLanguage || 'ar';
+        if (lang === 'ar') {
+            systemPrompt = `${systemPrompt}\n\n<LANGUAGE_INSTRUCTIONS>
+**IMPORTANT: This is an Arabic-first website (wasfai.com).**
+- All user-facing text, labels, buttons, headings, descriptions, and content in the generated application MUST be in Arabic.
+- All string literals displayed to users in JSX/TSX, HTML, or any UI code must be in Arabic.
+- Code comments can be in English, but all displayed text must be in Arabic.
+- Ensure proper RTL (right-to-left) layout support where applicable using dir="rtl" and appropriate CSS.
+- Use Arabic typography and ensure proper text rendering.
+- When designing the blueprint, specify that all UI components, navigation, forms, buttons, and content should use Arabic text.
+- The blueprint should explicitly mention Arabic language requirements for all user-facing elements.
+</LANGUAGE_INSTRUCTIONS>`;
         }
         
         const systemPromptMessage = createSystemMessage(generalSystemPromptBuilder(systemPrompt, {

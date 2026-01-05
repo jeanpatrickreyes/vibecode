@@ -298,8 +298,20 @@ export class PhaseGenerationOperation extends AgentOperation<PhasicGenerationCon
                 )
                 : createUserMessage(userPrompt);
             
+            // Add language-specific instructions for Arabic
+            const preferredLanguage = context.preferredLanguage || 'ar';
+            let systemPrompt = SYSTEM_PROMPT;
+            if (preferredLanguage === 'ar') {
+                systemPrompt = `${systemPrompt}\n\n<LANGUAGE_INSTRUCTIONS>
+**IMPORTANT: This is an Arabic-first website (wasfai.com).**
+- When planning phases, ensure that all user-facing text, labels, buttons, headings, and descriptions will be in Arabic.
+- Phase descriptions should mention Arabic language requirements for UI components.
+- Ensure RTL (right-to-left) layout support is considered in phase planning.
+</LANGUAGE_INSTRUCTIONS>`;
+            }
+            
             const messages: Message[] = [
-                ...getSystemPromptWithProjectContext(SYSTEM_PROMPT, context),
+                ...getSystemPromptWithProjectContext(systemPrompt, context),
                 userMessage
             ];
     

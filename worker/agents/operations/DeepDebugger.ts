@@ -137,10 +137,23 @@ export class DeepDebuggerOperation extends AgentOperationWithTools<
 
     protected async buildMessages(
         inputs: DeepDebuggerInputs,
-        _options: OperationOptions<GenerationContext>,
+        options: OperationOptions<GenerationContext>,
         session: DeepDebuggerSession
     ): Promise<Message[]> {
-        const system = createSystemMessage(SYSTEM_PROMPT);
+        // Add language-specific instructions for Arabic
+        const preferredLanguage = options.context.preferredLanguage || 'ar';
+        let systemPrompt = SYSTEM_PROMPT;
+        if (preferredLanguage === 'ar') {
+            systemPrompt = `${systemPrompt}\n\n<LANGUAGE_INSTRUCTIONS>
+**IMPORTANT: This is an Arabic-first website (wasfai.com).**
+- When fixing or generating user-facing text, labels, buttons, headings, or descriptions, ensure they are in Arabic.
+- Preserve all Arabic string literals in JSX/TSX, HTML, or any UI code.
+- If adding new user-facing text during fixes, it MUST be in Arabic.
+- Preserve RTL (right-to-left) layout support (dir="rtl") where applicable.
+</LANGUAGE_INSTRUCTIONS>`;
+        }
+        
+        const system = createSystemMessage(systemPrompt);
 
         const runtimeErrorsText = inputs.runtimeErrors
             ? PROMPT_UTILS.serializeErrors(inputs.runtimeErrors)
