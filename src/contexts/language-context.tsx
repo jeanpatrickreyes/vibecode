@@ -21,7 +21,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'header.projects': 'المشاريع',
 		'header.blog': 'المدونة',
 		'header.language': 'العربية',
-		
+
 		// Hero
 		'hero.title': 'عالمك الرقمي يبدأ هنا',
 		'hero.subtitle': 'اكتب فكرتك بالعربي، واحصل على موقع أو تطبيق كامل خلال دقائق. بدون أكواد، بدون تعقيد، بدون الحاجة للغة الإنجليزية.',
@@ -34,12 +34,12 @@ const translations: Record<Language, Record<string, string>> = {
 		'hero.try.blog': 'مدونة',
 		'hero.try.gallery': 'معرض',
 		'hero.try.menu': 'قائمة طعام',
-		
+
 		// Stats
 		'stats.projects': 'أكثر من 50,000 مشروع منشور',
 		'stats.countries': 'يستخدمه رواد أعمال في 15 دولة',
 		'stats.rating': 'تقييم 4.8/5 من المستخدمين',
-		
+
 		// Testimonials
 		'testimonials.title': 'ماذا يقول عملاؤنا',
 		'testimonials.ahmed.quote': 'فكرة عيني في دقائق صار عندي موقع كامل. جربت أدوات عالمية بس ما قدرت أتواصل معاها. Wasfai فهمتني من أول كلمة.',
@@ -51,7 +51,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'testimonials.mohammed.quote': 'متلي اللي عنده فكرة وما يعرف يترجمها لكود، Wasfai نعمة. سويت تطبيق حجوزات لعيادتي خلال ساعة فقط.',
 		'testimonials.mohammed.name': 'د. محمد، دبي',
 		'testimonials.mohammed.role': 'طبيب أسنان',
-		
+
 		// Features
 		'features.title': 'كل ما تحتاجه',
 		'features.subtitle': 'ميزات متكاملة لتصميم ونشر موقعك في دقائق',
@@ -67,7 +67,18 @@ const translations: Record<Language, Record<string, string>> = {
 		'features.systems.desc': 'حجوزات، تسجيل دخول بوابات دفع، ولوحات تحكم',
 		'features.edit.title': 'تعديل بالسؤال',
 		'features.edit.desc': 'غير أي شيء في موقعك بسؤال بسيط بالعربي',
-		
+
+		// Why Wasf AI Features
+		'features.why.title': 'لماذا Wasf AI؟',
+		'features.why.arabic.title': 'دعم عربي كامل',
+		'features.why.arabic.desc': 'واجهة ومخرجات مصممة للغة العربية بطلاقة',
+		'features.why.instant.title': 'بناء فوري',
+		'features.why.instant.desc': 'من الفكرة إلى موقع حقيقي في دقائق معدودة',
+		'features.why.models.title': 'نماذج متعددة',
+		'features.why.models.desc': 'اختر من بين أفضل نماذج الذكاء الاصطناعي العالمية',
+		'features.why.nocoding.title': 'بدون برمجة',
+		'features.why.nocoding.desc': 'فقط صف ما تريد والذكاء الاصطناعي يتولى الباقي',
+
 		// Pricing
 		'pricing.title': 'باقات تناسب كل ميزانية',
 		'pricing.subtitle': 'ابدأ مجاناً، وترق عندما تحتاج المزيد',
@@ -101,12 +112,12 @@ const translations: Record<Language, Record<string, string>> = {
 		'pricing.business.manager': 'مدير حساب مخصص',
 		'pricing.business.support': 'دعم على مدار الساعة',
 		'pricing.business.cta': 'تواصل معنا',
-		
+
 		// CTA
 		'cta.title': 'لا تنتظر أكثر من ذلك',
 		'cta.subtitle': 'الفكرة التي في ذهنك تستحق أن ترى النور. ابدأ الآن، ومجاني بالكامل.',
 		'cta.button': 'أنشئ حسابك المجاني الآن',
-		
+
 		// Footer
 		'footer.tagline': 'منصة بناء مواقع وتطبيقات بالعربي بدون أكواد اكتب فكرتك، واحصل على موقع منشور خلال دقائق.',
 		'footer.product': 'المنتج',
@@ -143,7 +154,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'footer.terms': 'شروط الخدمة',
 		'footer.cookies': 'ملفات تعريف الارتباط',
 		'footer.gdpr': 'حقوق GDPR',
-		
+
 		// Auth
 		'auth.welcome': 'مرحباً بعودتك',
 		'auth.welcomeBack': 'مرحباً بعودتك',
@@ -180,7 +191,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'auth.nameRequired': 'الاسم مطلوب',
 		'auth.nameMinLength': 'يجب أن يكون الاسم حرفين على الأقل',
 		'auth.passwordsDontMatch': 'كلمات المرور غير متطابقة',
-		
+
 		// Footer Pages - Product
 		'pages.features.metaTitle': 'الميزات | Wasf AI',
 		'pages.features.metaDescription': 'تعرّف على ميزات Wasf AI لبناء مواقع وتطبيقات عربية بدون كود.',
@@ -200,7 +211,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.features.sections.security.desc': 'بنية حديثة قابلة للتوسع مع ممارسات أمان قوية.',
 		'pages.features.faqTitle': 'الأسئلة الشائعة',
 		'pages.features.faqCta': 'زيارة صفحة الأسئلة',
-		
+
 		'pages.pricing.metaTitle': 'الأسعار | Wasf AI',
 		'pages.pricing.metaDescription': 'اختر الخطة المناسبة لمشروعك مع إمكانية الترقية في أي وقت.',
 		'pages.pricing.h1': 'أسعار بسيطة لكل مرحلة',
@@ -219,7 +230,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.pricing.tiers.business.cta': 'تواصل مع المبيعات',
 		'pages.pricing.comparisonTitle': 'مقارنة الخطط',
 		'pages.pricing.faqCta': 'أسئلة الفوترة',
-		
+
 		'pages.templates.metaTitle': 'القوالب | Wasf AI',
 		'pages.templates.metaDescription': 'تصفّح قوالب عربية وابدأ البناء خلال دقائق.',
 		'pages.templates.h1': 'ابدأ بقالب جاهز',
@@ -233,7 +244,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.templates.actions.useTemplate': 'استخدم القالب',
 		'pages.templates.empty.title': 'لا توجد قوالب',
 		'pages.templates.empty.desc': 'جرّب تغيير الفلاتر أو كلمات البحث.',
-		
+
 		'pages.integrations.metaTitle': 'التكاملات | Wasf AI',
 		'pages.integrations.metaDescription': 'اربط الدفع والتحليلات والأدوات لتشغيل مشروعك بالكامل.',
 		'pages.integrations.h1': 'التكاملات',
@@ -245,7 +256,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.integrations.categories.hosting': 'الاستضافة',
 		'pages.integrations.card.viewGuide': 'عرض دليل الإعداد',
 		'pages.integrations.card.comingSoon': 'قريبًا',
-		
+
 		'pages.changelog.metaTitle': 'التحديثات | Wasf AI',
 		'pages.changelog.metaDescription': 'تابع كل جديد في Wasf AI.',
 		'pages.changelog.h1': 'التحديثات',
@@ -253,7 +264,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.changelog.subscribe': 'اشترك للتحديثات',
 		'pages.changelog.empty.title': 'لا توجد تحديثات حتى الآن',
 		'pages.changelog.empty.desc': 'عد لاحقًا.',
-		
+
 		'pages.performance.metaTitle': 'الأداء | Wasf AI',
 		'pages.performance.metaDescription': 'كيف يحسن Wasf AI الأداء وأفضل الممارسات.',
 		'pages.performance.h1': 'الأداء',
@@ -264,7 +275,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.performance.sections.cdn.desc': 'محتوى أقرب للمستخدمين لسرعة تحميل أعلى.',
 		'pages.performance.sections.images.title': 'تحسين الصور',
 		'pages.performance.sections.images.desc': 'ضغط تلقائي وأحجام متجاوبة لتخفيف وزن الصفحات.',
-		
+
 		// Footer Pages - Resources
 		'pages.help.metaTitle': 'مركز المساعدة | Wasf AI',
 		'pages.help.metaDescription': 'مساعدة حول الإعداد والنشر والفوترة وحل المشاكل.',
@@ -274,7 +285,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.help.popularTitle': 'مقالات شائعة',
 		'pages.help.empty.title': 'لا توجد نتائج',
 		'pages.help.empty.desc': 'جرّب كلمات مختلفة.',
-		
+
 		'pages.docs.metaTitle': 'المستندات | Wasf AI',
 		'pages.docs.metaDescription': 'وثائق Wasf AI للمطورين والإعداد.',
 		'pages.docs.h1': 'المستندات',
@@ -285,7 +296,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.docs.sidebar.hosting': 'الاستضافة',
 		'pages.docs.sidebar.security': 'الأمان',
 		'pages.docs.sidebar.api': 'واجهة API',
-		
+
 		'pages.articles.metaTitle': 'المقالات | Wasf AI',
 		'pages.articles.metaDescription': 'شروحات ودروس وتحديثات المنتج.',
 		'pages.articles.h1': 'المقالات',
@@ -293,7 +304,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.articles.readMore': 'اقرأ المزيد',
 		'pages.articles.empty.title': 'لا توجد مقالات',
 		'pages.articles.empty.desc': 'جرّب تعديل البحث.',
-		
+
 		'pages.videos.metaTitle': 'الفيديوهات | Wasf AI',
 		'pages.videos.metaDescription': 'شروحات فيديو لتعلّم Wasf AI بسرعة.',
 		'pages.videos.h1': 'الفيديوهات',
@@ -301,7 +312,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.videos.watch': 'شاهد',
 		'pages.videos.empty.title': 'لا توجد فيديوهات بعد',
 		'pages.videos.empty.desc': 'قريبًا نضيف شروحات.',
-		
+
 		'pages.faq.metaTitle': 'الأسئلة الشائعة | Wasf AI',
 		'pages.faq.metaDescription': 'إجابات لأكثر الأسئلة شيوعًا.',
 		'pages.faq.h1': 'الأسئلة الشائعة',
@@ -348,14 +359,14 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.faq.a20': 'يمكنك التواصل مع فريق وصف عبر: صفحة التواصل، البريد الإلكتروني الرسمي، أو الدعم داخل المنصة (إن كان متاحًا).',
 		'pages.faq.stillHaveQuestions': 'لم تجد إجابة لسؤالك؟',
 		'pages.faq.contactUs': 'تواصل معنا',
-		
+
 		'pages.community.metaTitle': 'المجتمع | Wasf AI',
 		'pages.community.metaDescription': 'انضم إلى مجتمع Wasf AI.',
 		'pages.community.h1': 'المجتمع',
 		'pages.community.subheading': 'شارك ملاحظاتك وقوالبك وتعلّم مع الآخرين.',
 		'pages.community.primaryCta': 'انضم للمجتمع',
 		'pages.community.secondaryCta': 'إرسال ملاحظات',
-		
+
 		// Footer Pages - Company
 		'pages.about.metaTitle': 'من نحن | Wasf AI',
 		'pages.about.metaDescription': 'تعرف على قصة ورسالة Wasf AI.',
@@ -369,7 +380,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.about.sections.values.desc': 'الوضوح، السرعة، الثقة، والإتقان.',
 		'pages.about.primaryCta': 'ابدأ البناء',
 		'pages.about.secondaryCta': 'عرض القوالب',
-		
+
 		'pages.careers.metaTitle': 'الوظائف | Wasf AI',
 		'pages.careers.metaDescription': 'انضم إلى فريق Wasf AI.',
 		'pages.careers.h1': 'الوظائف',
@@ -378,7 +389,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.careers.apply': 'تقديم',
 		'pages.careers.empty.title': 'لا توجد وظائف حاليًا',
 		'pages.careers.empty.desc': 'عد لاحقًا.',
-		
+
 		'pages.press.metaTitle': 'الصحافة | Wasf AI',
 		'pages.press.metaDescription': 'المواد الصحفية والهوية.',
 		'pages.press.h1': 'الصحافة',
@@ -386,14 +397,14 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.press.downloadKit': 'تحميل الحقيبة الصحفية',
 		'pages.press.mediaContact': 'تواصل إعلامي',
 		'pages.press.emailLabel': 'البريد',
-		
+
 		'pages.partners.metaTitle': 'الشركاء | Wasf AI',
 		'pages.partners.metaDescription': 'كن شريكًا لـ Wasf AI.',
 		'pages.partners.h1': 'الشركاء',
 		'pages.partners.subheading': 'تعاون معنا لمساعدة المزيد من صناع المنتجات على الإطلاق بسرعة.',
 		'pages.partners.typesTitle': 'برامج الشراكة',
 		'pages.partners.applyCta': 'التقديم كشريك',
-		
+
 		'pages.contact.metaTitle': 'اتصل بنا | Wasf AI',
 		'pages.contact.metaDescription': 'تواصل مع فريق Wasf AI.',
 		'pages.contact.h1': 'اتصل بنا',
@@ -408,12 +419,12 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.contact.form.submit': 'إرسال',
 		'pages.contact.success.title': 'تم الإرسال',
 		'pages.contact.success.desc': 'سنرد عليك بأقرب وقت ممكن.',
-		
+
 		'pages.blog.metaTitle': 'المدونة | Wasf AI',
 		'pages.blog.metaDescription': 'أخبار ودروس وتحديثات المنتج.',
 		'pages.blog.h1': 'المدونة',
 		'pages.blog.subheading': 'تعلّم وأطلق ووسّع مشروعك مع Wasf AI.',
-		
+
 		// Footer Pages - Account
 		'pages.account.dashboard.navLabel': 'لوحة التحكم',
 		'pages.account.dashboard.h1': 'لوحة التحكم',
@@ -424,7 +435,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.dashboard.usage': 'الاستخدام',
 		'pages.account.dashboard.plan': 'الخطة',
 		'pages.account.dashboard.billingCta': 'إدارة الفوترة',
-		
+
 		'pages.account.profile.navLabel': 'الملف الشخصي',
 		'pages.account.profile.h1': 'الملف الشخصي',
 		'pages.account.profile.name': 'الاسم',
@@ -432,14 +443,14 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.profile.save': 'حفظ التغييرات',
 		'pages.account.profile.securityTitle': 'الأمان',
 		'pages.account.profile.changePassword': 'تغيير كلمة المرور',
-		
+
 		'pages.account.settings.navLabel': 'الإعدادات',
 		'pages.account.settings.h1': 'الإعدادات',
 		'pages.account.settings.language': 'اللغة',
 		'pages.account.settings.region': 'المنطقة',
 		'pages.account.settings.notifications': 'الإشعارات',
 		'pages.account.settings.save': 'حفظ',
-		
+
 		'pages.account.projects.navLabel': 'المشاريع',
 		'pages.account.projects.h1': 'المشاريع',
 		'pages.account.projects.search': 'ابحث في المشاريع...',
@@ -450,7 +461,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.projects.empty.title': 'لا توجد مشاريع بعد',
 		'pages.account.projects.empty.desc': 'أنشئ مشروعك الأول للبدء.',
 		'pages.account.projects.empty.cta': 'إنشاء مشروع',
-		
+
 		'pages.account.billing.navLabel': 'الفوترة',
 		'pages.account.billing.h1': 'الفوترة',
 		'pages.account.billing.currentPlan': 'الخطة الحالية',
@@ -459,13 +470,13 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.billing.invoices': 'الفواتير',
 		'pages.account.billing.downloadInvoice': 'تحميل',
 		'pages.account.billing.vatInvoice': 'فاتورة ضريبية',
-		
+
 		'pages.upgrade.navLabel': 'ترقية إلى Pro',
 		'pages.upgrade.h1': 'ترقية إلى Pro',
 		'pages.upgrade.subheading': 'افتح حدودًا أعلى وميزات متقدمة.',
 		'pages.upgrade.cta': 'ترقية الآن',
 		'pages.upgrade.secondary': 'عرض الأسعار',
-		
+
 		// Footer Pages - Legal
 		'pages.legal.terms.navLabel': 'شروط الخدمة',
 		'pages.legal.terms.h1': 'شروط الخدمة',
@@ -490,7 +501,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'header.projects': 'Projects',
 		'header.blog': 'Blog',
 		'header.language': 'English',
-		
+
 		// Hero
 		'hero.title': 'Your digital world starts here',
 		'hero.subtitle': 'Write your idea in Arabic, and get a complete website or application in minutes. Without code, without complexity, without the need for the English language.',
@@ -503,12 +514,12 @@ const translations: Record<Language, Record<string, string>> = {
 		'hero.try.blog': 'Blog',
 		'hero.try.gallery': 'Gallery',
 		'hero.try.menu': 'Food Menu',
-		
+
 		// Stats
 		'stats.projects': 'More than 50,000 published projects',
 		'stats.countries': 'Used by entrepreneurs in 15 countries',
 		'stats.rating': '4.8/5 rating from users',
-		
+
 		// Testimonials
 		'testimonials.title': 'What our customers say',
 		'testimonials.ahmed.quote': 'In a blink of an eye, I had a complete website. I tried global tools but couldn\'t communicate with them. Wasfai understood me from the first word.',
@@ -520,7 +531,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'testimonials.mohammed.quote': 'For someone like me who has an idea but doesn\'t know how to translate it into code, Wasfai is a blessing. I created a booking application for my clinic in just one hour.',
 		'testimonials.mohammed.name': 'Dr. Mohammed, Dubai',
 		'testimonials.mohammed.role': 'Dentist',
-		
+
 		// Features
 		'features.title': 'Everything you need',
 		'features.subtitle': 'Integrated features to design and publish your website in minutes',
@@ -536,7 +547,18 @@ const translations: Record<Language, Record<string, string>> = {
 		'features.systems.desc': 'Bookings, login, payment gateways, and control panels',
 		'features.edit.title': 'Edit by Question',
 		'features.edit.desc': 'Change anything on your website with a simple question in Arabic',
-		
+
+		// Why Wasf AI Features
+		'features.why.title': 'Why Wasf AI?',
+		'features.why.arabic.title': 'Full Arabic Support',
+		'features.why.arabic.desc': 'Interface and outputs designed for fluent Arabic',
+		'features.why.instant.title': 'Instant Building',
+		'features.why.instant.desc': 'From idea to real website in minutes',
+		'features.why.models.title': 'Multiple Models',
+		'features.why.models.desc': 'Choose from the best global AI models',
+		'features.why.nocoding.title': 'No Coding',
+		'features.why.nocoding.desc': 'Just describe what you want and AI handles the rest',
+
 		// Pricing
 		'pricing.title': 'Packages to suit every budget',
 		'pricing.subtitle': 'Start for free, and upgrade when you need more',
@@ -570,12 +592,12 @@ const translations: Record<Language, Record<string, string>> = {
 		'pricing.business.manager': 'Dedicated account manager',
 		'pricing.business.support': '24/7 support',
 		'pricing.business.cta': 'Contact us',
-		
+
 		// CTA
 		'cta.title': 'Don\'t wait any longer',
 		'cta.subtitle': 'The idea in your mind deserves to see the light. Start now, and it\'s completely free.',
 		'cta.button': 'Create your free account now',
-		
+
 		// Footer
 		'footer.tagline': 'Platform for building websites and applications in Arabic without code. Write your idea, and get a published site in minutes.',
 		'footer.product': 'Product',
@@ -612,7 +634,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'footer.terms': 'Terms of Service',
 		'footer.cookies': 'Cookie Policy',
 		'footer.gdpr': 'GDPR Rights',
-		
+
 		// Auth
 		'auth.welcome': 'Welcome',
 		'auth.welcomeBack': 'Welcome back',
@@ -649,7 +671,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'auth.nameRequired': 'Name is required',
 		'auth.nameMinLength': 'Name must be at least 2 characters',
 		'auth.passwordsDontMatch': 'Passwords do not match',
-		
+
 		// Footer Pages - Product
 		'pages.features.metaTitle': 'Features | Wasf AI',
 		'pages.features.metaDescription': 'Explore Wasf AI features to build Arabic-first websites and apps without code.',
@@ -669,7 +691,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.features.sections.security.desc': 'Built with modern security practices and scalable infrastructure.',
 		'pages.features.faqTitle': 'Frequently asked questions',
 		'pages.features.faqCta': 'Visit FAQ',
-		
+
 		'pages.pricing.metaTitle': 'Pricing | Wasf AI',
 		'pages.pricing.metaDescription': 'Choose a plan that fits your project. Upgrade anytime.',
 		'pages.pricing.h1': 'Simple pricing for every stage',
@@ -688,7 +710,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.pricing.tiers.business.cta': 'Talk to Sales',
 		'pages.pricing.comparisonTitle': 'Compare plans',
 		'pages.pricing.faqCta': 'Billing FAQ',
-		
+
 		'pages.templates.metaTitle': 'Templates | Wasf AI',
 		'pages.templates.metaDescription': 'Browse Arabic-first templates and start building in minutes.',
 		'pages.templates.h1': 'Start with a template',
@@ -702,7 +724,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.templates.actions.useTemplate': 'Use template',
 		'pages.templates.empty.title': 'No templates found',
 		'pages.templates.empty.desc': 'Try changing filters or search keywords.',
-		
+
 		'pages.integrations.metaTitle': 'Integrations | Wasf AI',
 		'pages.integrations.metaDescription': 'Connect payments, analytics, and tools to power your project.',
 		'pages.integrations.h1': 'Integrations',
@@ -714,7 +736,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.integrations.categories.hosting': 'Hosting',
 		'pages.integrations.card.viewGuide': 'View setup guide',
 		'pages.integrations.card.comingSoon': 'Coming soon',
-		
+
 		'pages.changelog.metaTitle': 'Changelog | Wasf AI',
 		'pages.changelog.metaDescription': 'See what\'s new in Wasf AI.',
 		'pages.changelog.h1': 'Changelog',
@@ -722,7 +744,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.changelog.subscribe': 'Get updates',
 		'pages.changelog.empty.title': 'No updates yet',
 		'pages.changelog.empty.desc': 'Check back soon.',
-		
+
 		'pages.performance.metaTitle': 'Performance | Wasf AI',
 		'pages.performance.metaDescription': 'How Wasf AI optimizes performance and best practices.',
 		'pages.performance.h1': 'Performance',
@@ -733,7 +755,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.performance.sections.cdn.desc': 'Content served closer to your users for faster load times.',
 		'pages.performance.sections.images.title': 'Image Optimization',
 		'pages.performance.sections.images.desc': 'Compression and responsive sizing to keep pages lightweight.',
-		
+
 		// Footer Pages - Resources
 		'pages.help.metaTitle': 'Help Center | Wasf AI',
 		'pages.help.metaDescription': 'Get help with setup, publishing, billing, and troubleshooting.',
@@ -743,7 +765,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.help.popularTitle': 'Popular articles',
 		'pages.help.empty.title': 'No results',
 		'pages.help.empty.desc': 'Try different keywords.',
-		
+
 		'pages.docs.metaTitle': 'Docs | Wasf AI',
 		'pages.docs.metaDescription': 'Developer documentation for Wasf AI.',
 		'pages.docs.h1': 'Documentation',
@@ -754,7 +776,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.docs.sidebar.hosting': 'Hosting',
 		'pages.docs.sidebar.security': 'Security',
 		'pages.docs.sidebar.api': 'API',
-		
+
 		'pages.articles.metaTitle': 'Articles | Wasf AI',
 		'pages.articles.metaDescription': 'Guides, tutorials, and product updates.',
 		'pages.articles.h1': 'Articles',
@@ -762,7 +784,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.articles.readMore': 'Read more',
 		'pages.articles.empty.title': 'No articles found',
 		'pages.articles.empty.desc': 'Try adjusting your search.',
-		
+
 		'pages.videos.metaTitle': 'Videos | Wasf AI',
 		'pages.videos.metaDescription': 'Video tutorials to learn Wasf AI quickly.',
 		'pages.videos.h1': 'Videos',
@@ -770,7 +792,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.videos.watch': 'Watch',
 		'pages.videos.empty.title': 'No videos yet',
 		'pages.videos.empty.desc': 'We\'re adding tutorials soon.',
-		
+
 		'pages.faq.metaTitle': 'FAQ | Wasf AI',
 		'pages.faq.metaDescription': 'Answers to the most common questions.',
 		'pages.faq.h1': 'Frequently Asked Questions',
@@ -817,14 +839,14 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.faq.a20': 'You can contact Wasfai support via: The Contact page, Official support email, In-platform support (if available).',
 		'pages.faq.stillHaveQuestions': 'Still have questions?',
 		'pages.faq.contactUs': 'Contact Us',
-		
+
 		'pages.community.metaTitle': 'Community | Wasf AI',
 		'pages.community.metaDescription': 'Join the Wasf AI community.',
 		'pages.community.h1': 'Community',
 		'pages.community.subheading': 'Share feedback, templates, and learn with others.',
 		'pages.community.primaryCta': 'Join community',
 		'pages.community.secondaryCta': 'Submit feedback',
-		
+
 		// Footer Pages - Company
 		'pages.about.metaTitle': 'About | Wasf AI',
 		'pages.about.metaDescription': 'Learn about Wasf AI mission and story.',
@@ -838,7 +860,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.about.sections.values.desc': 'Clarity, speed, trust, and craftsmanship.',
 		'pages.about.primaryCta': 'Start building',
 		'pages.about.secondaryCta': 'View templates',
-		
+
 		'pages.careers.metaTitle': 'Careers | Wasf AI',
 		'pages.careers.metaDescription': 'Join Wasf AI team.',
 		'pages.careers.h1': 'Careers',
@@ -847,7 +869,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.careers.apply': 'Apply',
 		'pages.careers.empty.title': 'No open roles',
 		'pages.careers.empty.desc': 'Check back soon.',
-		
+
 		'pages.press.metaTitle': 'Press | Wasf AI',
 		'pages.press.metaDescription': 'Press kit and media resources.',
 		'pages.press.h1': 'Press',
@@ -855,14 +877,14 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.press.downloadKit': 'Download press kit',
 		'pages.press.mediaContact': 'Media contact',
 		'pages.press.emailLabel': 'Email',
-		
+
 		'pages.partners.metaTitle': 'Partners | Wasf AI',
 		'pages.partners.metaDescription': 'Partner with Wasf AI.',
 		'pages.partners.h1': 'Partners',
 		'pages.partners.subheading': 'Work with us to help more builders launch faster.',
 		'pages.partners.typesTitle': 'Partner programs',
 		'pages.partners.applyCta': 'Apply to become a partner',
-		
+
 		'pages.contact.metaTitle': 'Contact | Wasf AI',
 		'pages.contact.metaDescription': 'Contact Wasf AI support and team.',
 		'pages.contact.h1': 'Contact us',
@@ -877,12 +899,12 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.contact.form.submit': 'Send message',
 		'pages.contact.success.title': 'Message sent',
 		'pages.contact.success.desc': 'We\'ll reply as soon as possible.',
-		
+
 		'pages.blog.metaTitle': 'Blog | Wasf AI',
 		'pages.blog.metaDescription': 'News, tutorials, and product updates.',
 		'pages.blog.h1': 'Blog',
 		'pages.blog.subheading': 'Learn, launch, and grow with Wasf AI.',
-		
+
 		// Footer Pages - Account
 		'pages.account.dashboard.navLabel': 'Dashboard',
 		'pages.account.dashboard.h1': 'Dashboard',
@@ -893,7 +915,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.dashboard.usage': 'Usage',
 		'pages.account.dashboard.plan': 'Plan',
 		'pages.account.dashboard.billingCta': 'Manage billing',
-		
+
 		'pages.account.profile.navLabel': 'Profile',
 		'pages.account.profile.h1': 'Profile',
 		'pages.account.profile.name': 'Name',
@@ -901,14 +923,14 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.profile.save': 'Save changes',
 		'pages.account.profile.securityTitle': 'Security',
 		'pages.account.profile.changePassword': 'Change password',
-		
+
 		'pages.account.settings.navLabel': 'Settings',
 		'pages.account.settings.h1': 'Settings',
 		'pages.account.settings.language': 'Language',
 		'pages.account.settings.region': 'Region',
 		'pages.account.settings.notifications': 'Notifications',
 		'pages.account.settings.save': 'Save',
-		
+
 		'pages.account.projects.navLabel': 'Projects',
 		'pages.account.projects.h1': 'Projects',
 		'pages.account.projects.search': 'Search projects...',
@@ -919,7 +941,7 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.projects.empty.title': 'No projects yet',
 		'pages.account.projects.empty.desc': 'Create your first project to get started.',
 		'pages.account.projects.empty.cta': 'Create project',
-		
+
 		'pages.account.billing.navLabel': 'Billing',
 		'pages.account.billing.h1': 'Billing',
 		'pages.account.billing.currentPlan': 'Current plan',
@@ -928,13 +950,13 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.account.billing.invoices': 'Invoices',
 		'pages.account.billing.downloadInvoice': 'Download',
 		'pages.account.billing.vatInvoice': 'VAT invoice',
-		
+
 		'pages.upgrade.navLabel': 'Upgrade to Pro',
 		'pages.upgrade.h1': 'Upgrade to Pro',
 		'pages.upgrade.subheading': 'Unlock higher limits and advanced features.',
 		'pages.upgrade.cta': 'Upgrade now',
 		'pages.upgrade.secondary': 'See pricing',
-		
+
 		// Footer Pages - Legal
 		'pages.legal.terms.navLabel': 'Terms of Service',
 		'pages.legal.terms.h1': 'Terms of Service',

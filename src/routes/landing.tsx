@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import { ArrowRight, Clock, Check, X, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, Star, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe } from 'lucide-react';
+import { ArrowRight, Clock, Check, X, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe, Code } from 'lucide-react';
 import { useNavigate, Link } from 'react-router';
 import { useAuth } from '@/contexts/auth-context';
 import { MAX_AGENT_QUERY_LENGTH, SUPPORTED_IMAGE_MIME_TYPES, type ProjectType } from '@/api-types';
@@ -311,80 +311,63 @@ export default function Landing() {
 				</div>
 			</section>
 
-			{/* Testimonials Section */}
-			<section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+			{/* Why Wasf AI Section */}
+			<section className="py-12 sm:py-16 lg:py-20 bg-white">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
-					<h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-900">
-						{t('testimonials.title')}
+					<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-gray-900">
+						{t('features.why.title')}
 					</h2>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-						{/* Testimonial 1 */}
-						<div className="bg-white rounded-lg p-6 shadow-sm">
-							<div className="flex gap-1 mb-4">
-								{[...Array(5)].map((_, i) => (
-									<Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-								))}
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
+						{/* Full Arabic Support */}
+						<div className="flex flex-col items-center text-center">
+							<div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-50 rounded-xl border border-green-200 flex items-center justify-center mb-4 sm:mb-6">
+								<Globe className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
 							</div>
-							<p className="text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-								{t('testimonials.ahmed.quote')}
+							<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+								{t('features.why.arabic.title')}
+							</h3>
+							<p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+								{t('features.why.arabic.desc')}
 							</p>
-							<div className="flex items-center gap-3">
-								<div className="h-10 w-10 rounded-full bg-[#1e3a5f] flex items-center justify-center text-white font-semibold">
-									أ
-								</div>
-								<div>
-									<p className="font-medium text-sm sm:text-base text-gray-900">
-										{t('testimonials.ahmed.name')}
-									</p>
-									<p className="text-xs sm:text-sm text-gray-500">{t('testimonials.ahmed.role')}</p>
-								</div>
-							</div>
 						</div>
 
-						{/* Testimonial 2 */}
-						<div className="bg-white rounded-lg p-6 shadow-sm">
-							<div className="flex gap-1 mb-4">
-								{[...Array(5)].map((_, i) => (
-									<Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-								))}
+						{/* Instant Building */}
+						<div className="flex flex-col items-center text-center">
+							<div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-50 rounded-xl border border-green-200 flex items-center justify-center mb-4 sm:mb-6">
+								<Zap className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
 							</div>
-							<p className="text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-								{t('testimonials.sara.quote')}
+							<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+								{t('features.why.instant.title')}
+							</h3>
+							<p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+								{t('features.why.instant.desc')}
 							</p>
-							<div className="flex items-center gap-3">
-								<div className="h-10 w-10 rounded-full bg-[#1e3a5f] flex items-center justify-center text-white font-semibold">
-									س
-								</div>
-								<div>
-									<p className="font-medium text-sm sm:text-base text-gray-900">
-										{t('testimonials.sara.name')}
-									</p>
-									<p className="text-xs sm:text-sm text-gray-500">{t('testimonials.sara.role')}</p>
-								</div>
-							</div>
 						</div>
 
-						{/* Testimonial 3 */}
-						<div className="bg-white rounded-lg p-6 shadow-sm">
-							<div className="flex gap-1 mb-4">
-								{[...Array(5)].map((_, i) => (
-									<Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-								))}
+						{/* Multiple Models */}
+						<div className="flex flex-col items-center text-center">
+							<div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-50 rounded-xl border border-green-200 flex items-center justify-center mb-4 sm:mb-6">
+								<Code className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
 							</div>
-							<p className="text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
-								{t('testimonials.mohammed.quote')}
+							<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+								{t('features.why.models.title')}
+							</h3>
+							<p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+								{t('features.why.models.desc')}
 							</p>
-							<div className="flex items-center gap-3">
-								<div className="h-10 w-10 rounded-full bg-[#1e3a5f] flex items-center justify-center text-white font-semibold">
-									د
-								</div>
-								<div>
-									<p className="font-medium text-sm sm:text-base text-gray-900">
-										{t('testimonials.mohammed.name')}
-									</p>
-									<p className="text-xs sm:text-sm text-gray-500">{t('testimonials.mohammed.role')}</p>
-								</div>
+						</div>
+
+						{/* No Coding */}
+						<div className="flex flex-col items-center text-center">
+							<div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-50 rounded-xl border border-green-200 flex items-center justify-center mb-4 sm:mb-6">
+								<FileText className="h-8 w-8 sm:h-10 sm:w-10 text-green-600" />
 							</div>
+							<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+								{t('features.why.nocoding.title')}
+							</h3>
+							<p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+								{t('features.why.nocoding.desc')}
+							</p>
 						</div>
 					</div>
 				</div>
