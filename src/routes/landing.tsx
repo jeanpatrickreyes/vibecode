@@ -484,6 +484,81 @@ export default function Landing() {
 				</div>
 			</section>
 
+			{/* Credit Purchase Section */}
+			<section className="py-12 sm:py-16 lg:py-20 bg-white">
+				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-8 sm:mb-12">
+						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+							{t('credits.title')}
+						</h2>
+						<p className="text-base sm:text-lg text-gray-600">
+							{t('credits.subtitle')}
+						</p>
+					</div>
+					<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
+						{/* Package 1 */}
+						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+							<div className="text-center">
+								<p className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+									{t('credits.package1.amount')}
+								</p>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-3xl sm:text-4xl font-bold text-[#1e3a5f]">
+										{t('credits.package1.price')}
+									</span>
+									<span className="text-base sm:text-lg text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+							</div>
+						</div>
+
+						{/* Package 2 */}
+						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+							<div className="text-center">
+								<p className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+									{t('credits.package2.amount')}
+								</p>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-3xl sm:text-4xl font-bold text-[#1e3a5f]">
+										{t('credits.package2.price')}
+									</span>
+									<span className="text-base sm:text-lg text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+							</div>
+						</div>
+
+						{/* Package 3 */}
+						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+							<div className="text-center">
+								<p className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+									{t('credits.package3.amount')}
+								</p>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-3xl sm:text-4xl font-bold text-[#1e3a5f]">
+										{t('credits.package3.price')}
+									</span>
+									<span className="text-base sm:text-lg text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			{/* CTA Section */}
 			<section className="py-12 sm:py-16 lg:py-20 bg-[#1e3a5f] text-white">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

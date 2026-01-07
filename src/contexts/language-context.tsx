@@ -103,6 +103,18 @@ const translations: Record<Language, Record<string, string>> = {
 		'pricing.pro.prioritySupport': 'دعم أولوية',
 		'pricing.pro.exportCode': 'تصدير الكود',
 		'pricing.pro.cta': 'اشترك الآن',
+
+		// Credit Purchase Section
+		'credits.title': 'هل تحتاج المزيد؟',
+		'credits.subtitle': 'اشتر رصيداً إضافياً عند الحاجة',
+		'credits.package1.amount': '10,000 رصيد +',
+		'credits.package1.price': '40',
+		'credits.package2.amount': '50,000 رصيد +',
+		'credits.package2.price': '200',
+		'credits.package3.amount': '100,000 رصيد +',
+		'credits.package3.price': '350',
+		'credits.currency': 'ر.س',
+
 		'pricing.business.title': 'Business',
 		'pricing.business.price': '299 د.إ / شهر',
 		'pricing.business.desc': 'للفرق والمؤسسات',
@@ -584,6 +596,18 @@ const translations: Record<Language, Record<string, string>> = {
 		'pricing.pro.prioritySupport': 'Priority support',
 		'pricing.pro.exportCode': 'Export code',
 		'pricing.pro.cta': 'Subscribe Now',
+
+		// Credit Purchase Section
+		'credits.title': 'Do you need more?',
+		'credits.subtitle': 'Buy additional credit when needed',
+		'credits.package1.amount': '10,000 credits +',
+		'credits.package1.price': '40',
+		'credits.package2.amount': '50,000 credits +',
+		'credits.package2.price': '200',
+		'credits.package3.amount': '100,000 credits +',
+		'credits.package3.price': '350',
+		'credits.currency': 'SAR',
+
 		'pricing.business.title': 'Business',
 		'pricing.business.price': '299 S.R. / month',
 		'pricing.business.desc': 'For teams and organizations',
