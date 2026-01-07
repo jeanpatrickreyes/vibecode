@@ -559,6 +559,193 @@ export default function Landing() {
 				</div>
 			</section>
 
+			{/* AI Models Section */}
+			<section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-8 sm:mb-12">
+						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+							{t('aiModels.title')}
+						</h2>
+					</div>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
+						{/* MiniMax */}
+						<div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow relative">
+							<div className={clsx(
+								'absolute top-3 bg-green-100 text-green-700 px-2 py-1 rounded-lg text-xs font-medium',
+								isRTL ? 'left-3' : 'right-3'
+							)}>
+								{t('aiModels.recommended')}
+							</div>
+							<div className="mt-8 sm:mt-10 text-center">
+								<div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
+									<div className="text-center">
+										<div className="text-red-500 text-2xl sm:text-3xl font-bold mb-1">M</div>
+										<div className="text-xs text-gray-600">MINIMAX</div>
+									</div>
+								</div>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
+									{t('aiModels.minimax.name')}
+								</h3>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2 mb-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-2xl sm:text-3xl font-bold text-[#1e3a5f]">
+										{t('aiModels.minimax.price')}
+									</span>
+									<span className="text-sm sm:text-base text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+								<p className="text-xs sm:text-sm text-gray-500">
+									{t('aiModels.priceUnit')}
+								</p>
+							</div>
+						</div>
+
+						{/* GLM 4.7 */}
+						<div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow relative">
+							<div className={clsx(
+								'absolute top-3 bg-green-100 text-green-700 px-2 py-1 rounded-lg text-xs font-medium',
+								isRTL ? 'left-3' : 'right-3'
+							)}>
+								{t('aiModels.recommended')}
+							</div>
+							<div className="mt-8 sm:mt-10 text-center">
+								<div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
+									<div className="text-center">
+										<div className="text-gray-900 text-xl sm:text-2xl font-bold mb-1">Z</div>
+										<div className="text-xs text-gray-600">GLM-4.7</div>
+									</div>
+								</div>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
+									{t('aiModels.glm.name')}
+								</h3>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2 mb-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-2xl sm:text-3xl font-bold text-[#1e3a5f]">
+										{t('aiModels.glm.price')}
+									</span>
+									<span className="text-sm sm:text-base text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+								<p className="text-xs sm:text-sm text-gray-500">
+									{t('aiModels.priceUnit')}
+								</p>
+							</div>
+						</div>
+
+						{/* Qwen */}
+						<div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow relative">
+							<div className={clsx(
+								'absolute top-3 bg-green-100 text-green-700 px-2 py-1 rounded-lg text-xs font-medium',
+								isRTL ? 'left-3' : 'right-3'
+							)}>
+								{t('aiModels.recommended')}
+							</div>
+							<div className="mt-8 sm:mt-10 text-center">
+								<div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
+									<div className="text-center">
+										<div className="text-purple-500 text-2xl sm:text-3xl font-bold mb-1">Q</div>
+										<div className="text-xs text-gray-600">Qwen</div>
+									</div>
+								</div>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
+									{t('aiModels.qwen.name')}
+								</h3>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2 mb-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-2xl sm:text-3xl font-bold text-[#1e3a5f]">
+										{t('aiModels.qwen.price')}
+									</span>
+									<span className="text-sm sm:text-base text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+								<p className="text-xs sm:text-sm text-gray-500">
+									{t('aiModels.priceUnit')}
+								</p>
+							</div>
+						</div>
+
+						{/* OpenAI GPT-4o */}
+						<div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow relative">
+							<div className={clsx(
+								'absolute top-3 bg-green-100 text-green-700 px-2 py-1 rounded-lg text-xs font-medium',
+								isRTL ? 'left-3' : 'right-3'
+							)}>
+								{t('aiModels.recommended')}
+							</div>
+							<div className="mt-8 sm:mt-10 text-center">
+								<div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
+									<div className="text-center">
+										<div className="text-gray-900 text-xl sm:text-2xl font-bold mb-1">◉</div>
+										<div className="text-xs text-gray-600">OpenAI</div>
+									</div>
+								</div>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
+									{t('aiModels.openai.name')}
+								</h3>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2 mb-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-2xl sm:text-3xl font-bold text-[#1e3a5f]">
+										{t('aiModels.openai.price')}
+									</span>
+									<span className="text-sm sm:text-base text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+								<p className="text-xs sm:text-sm text-gray-500">
+									{t('aiModels.priceUnit')}
+								</p>
+							</div>
+						</div>
+
+						{/* Gemini Flash */}
+						<div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow relative">
+							<div className={clsx(
+								'absolute top-3 bg-green-100 text-green-700 px-2 py-1 rounded-lg text-xs font-medium',
+								isRTL ? 'left-3' : 'right-3'
+							)}>
+								{t('aiModels.recommended')}
+							</div>
+							<div className="mt-8 sm:mt-10 text-center">
+								<div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 bg-white border border-gray-200 rounded-lg flex items-center justify-center">
+									<div className="text-center">
+										<div className="text-blue-500 text-2xl sm:text-3xl font-bold mb-1">✦</div>
+										<div className="text-xs text-gray-600">Gemini</div>
+									</div>
+								</div>
+								<h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
+									{t('aiModels.gemini.name')}
+								</h3>
+								<div className={clsx(
+									'flex items-baseline justify-center gap-2 mb-2',
+									isRTL && 'flex-row-reverse'
+								)}>
+									<span className="text-2xl sm:text-3xl font-bold text-[#1e3a5f]">
+										{t('aiModels.gemini.price')}
+									</span>
+									<span className="text-sm sm:text-base text-gray-600">
+										{t('credits.currency')}
+									</span>
+								</div>
+								<p className="text-xs sm:text-sm text-gray-500">
+									{t('aiModels.priceUnit')}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			{/* CTA Section */}
 			<section className="py-12 sm:py-16 lg:py-20 bg-[#1e3a5f] text-white">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

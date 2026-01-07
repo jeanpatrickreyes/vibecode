@@ -115,6 +115,21 @@ const translations: Record<Language, Record<string, string>> = {
 		'credits.package3.price': '350',
 		'credits.currency': 'ر.س',
 
+		// AI Models Section
+		'aiModels.title': 'نماذج الذكاء الاصطناعي',
+		'aiModels.recommended': 'موصى به',
+		'aiModels.priceUnit': '1000 / token',
+		'aiModels.minimax.name': 'MiniMax',
+		'aiModels.minimax.price': '0.005',
+		'aiModels.glm.name': 'GLM 4.7',
+		'aiModels.glm.price': '0.004',
+		'aiModels.qwen.name': 'Qwen',
+		'aiModels.qwen.price': '0.005',
+		'aiModels.openai.name': 'OpenAI GPT-4o',
+		'aiModels.openai.price': '0.040',
+		'aiModels.gemini.name': 'Gemini Flash',
+		'aiModels.gemini.price': '0.012',
+
 		'pricing.business.title': 'Business',
 		'pricing.business.price': '299 د.إ / شهر',
 		'pricing.business.desc': 'للفرق والمؤسسات',
@@ -607,6 +622,21 @@ const translations: Record<Language, Record<string, string>> = {
 		'credits.package3.amount': '100,000 credits +',
 		'credits.package3.price': '350',
 		'credits.currency': 'SAR',
+
+		// AI Models Section
+		'aiModels.title': 'AI Models',
+		'aiModels.recommended': 'Recommended',
+		'aiModels.priceUnit': '1000 / token',
+		'aiModels.minimax.name': 'MiniMax',
+		'aiModels.minimax.price': '0.005',
+		'aiModels.glm.name': 'GLM 4.7',
+		'aiModels.glm.price': '0.004',
+		'aiModels.qwen.name': 'Qwen',
+		'aiModels.qwen.price': '0.005',
+		'aiModels.openai.name': 'OpenAI GPT-4o',
+		'aiModels.openai.price': '0.040',
+		'aiModels.gemini.name': 'Gemini Flash',
+		'aiModels.gemini.price': '0.012',
 
 		'pricing.business.title': 'Business',
 		'pricing.business.price': '299 S.R. / month',
