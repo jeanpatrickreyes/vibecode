@@ -7,6 +7,7 @@ import { useAuthGuard } from '../hooks/useAuthGuard';
 import { useImageUpload } from '@/hooks/use-image-upload';
 import { useDragDrop } from '@/hooks/use-drag-drop';
 import { ImageAttachmentPreview } from '@/components/image-attachment-preview';
+import { ImageUploadButton } from '@/components/image-upload-button';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/language-context';
 import { LandingHeader } from '@/components/landing/landing-header';
@@ -194,10 +195,37 @@ export default function Landing() {
 										handleCreateApp(query, projectMode);
 									}
 								}}
+								onDragEnter={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									dragHandlers.onDragEnter(e);
+								}}
+								onDragOver={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									dragHandlers.onDragOver(e);
+								}}
+								onDragLeave={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									dragHandlers.onDragLeave(e);
+								}}
+								onDrop={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									dragHandlers.onDrop(e);
+								}}
 								placeholder={t('hero.inputPlaceholder')}
 								className="w-full resize-none outline-none text-gray-800 placeholder:text-gray-400 text-sm sm:text-base min-h-[60px]"
 							/>
-							<Clock className="h-5 w-5 text-gray-400 flex-shrink-0 ml-2" />
+							<div className="flex items-center gap-2 flex-shrink-0 ml-2">
+								<ImageUploadButton
+									onFilesSelected={addImages}
+									className="p-2 rounded-md hover:bg-gray-100 text-gray-600 hover:text-[#1e3a5f] transition-colors cursor-pointer"
+									iconClassName="h-5 w-5"
+								/>
+								<Clock className="h-5 w-5 text-gray-400" />
+							</div>
 						</div>
 					</div>
 
