@@ -387,6 +387,8 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.faq.a20': 'يمكنك التواصل مع فريق وصف عبر: صفحة التواصل، البريد الإلكتروني الرسمي، أو الدعم داخل المنصة (إن كان متاحًا).',
 		'pages.faq.stillHaveQuestions': 'لم تجد إجابة لسؤالك؟',
 		'pages.faq.contactUs': 'تواصل معنا',
+		'landing.faq.title': 'الأسئلة الشائعة',
+		'landing.faq.subtitle': 'إجابات سريعة على أكثر الأسئلة شيوعًا',
 
 		'pages.community.metaTitle': 'المجتمع | Wasf AI',
 		'pages.community.metaDescription': 'انضم إلى مجتمع Wasf AI.',
@@ -895,6 +897,8 @@ const translations: Record<Language, Record<string, string>> = {
 		'pages.faq.a20': 'You can contact Wasfai support via: The Contact page, Official support email, In-platform support (if available).',
 		'pages.faq.stillHaveQuestions': 'Still have questions?',
 		'pages.faq.contactUs': 'Contact Us',
+		'landing.faq.title': 'Frequently Asked Questions',
+		'landing.faq.subtitle': 'Quick answers to the most common questions',
 
 		'pages.community.metaTitle': 'Community | Wasf AI',
 		'pages.community.metaDescription': 'Join the Wasf AI community.',

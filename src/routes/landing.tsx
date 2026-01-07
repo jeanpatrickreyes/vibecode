@@ -11,6 +11,7 @@ import { ImageUploadButton } from '@/components/image-upload-button';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/language-context';
 import { LandingHeader } from '@/components/landing/landing-header';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import clsx from 'clsx';
 import logoImage from '@/assets/provider-logos/logo.png';
 import currencyImage from '@/assets/currency.jpg';
@@ -741,6 +742,173 @@ export default function Landing() {
 									{t('aiModels.priceUnit')}
 								</p>
 							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* FAQ Section */}
+			<section className="py-12 sm:py-16 lg:py-20 bg-white">
+				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="text-center mb-8 sm:mb-12">
+						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+							{t('landing.faq.title')}
+						</h2>
+						<p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+							{t('landing.faq.subtitle')}
+						</p>
+					</div>
+					<div className="max-w-4xl mx-auto">
+						<div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+							<Accordion type="single" collapsible className="w-full">
+								{/* Q1: What is Wasfai? */}
+								<AccordionItem value="faq-1" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q1')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a1')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q2: Who is Wasfai for? */}
+								<AccordionItem value="faq-2" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q2')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a2')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q3: Do I need coding or design experience? */}
+								<AccordionItem value="faq-3" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q3')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a3')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q4: What can I build using Wasfai? */}
+								<AccordionItem value="faq-4" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q4')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a4')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q5: Which languages does Wasfai support? */}
+								<AccordionItem value="faq-5" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q5')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a5')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q6: How does Wasfai work? */}
+								<AccordionItem value="faq-6" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q6')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a6')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q7: Can I edit my project after it's generated? */}
+								<AccordionItem value="faq-7" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q7')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a7')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q10: Is Wasfai free? */}
+								<AccordionItem value="faq-10" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q10')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a10')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q11: How does pricing work? */}
+								<AccordionItem value="faq-11" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q11')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a11')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+
+								{/* Q16: Is my data safe? */}
+								<AccordionItem value="faq-16" className="border-b border-gray-200 last:border-b-0">
+									<AccordionTrigger className={`px-4 sm:px-6 py-4 ${isRTL ? 'text-right' : 'text-left'} hover:no-underline hover:bg-gray-50 transition-colors`}>
+										<span className="font-semibold text-gray-900 text-sm sm:text-base flex-1">
+											{t('pages.faq.q16')}
+										</span>
+									</AccordionTrigger>
+									<AccordionContent className="px-4 sm:px-6 pb-4">
+										<div className={`text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line ${isRTL ? 'text-right' : 'text-left'}`}>
+											{t('pages.faq.a16')}
+										</div>
+									</AccordionContent>
+								</AccordionItem>
+							</Accordion>
+						</div>
+						<div className="mt-8 text-center">
+							<Link
+								to="/faq"
+								className="inline-flex items-center text-[#1e3a5f] hover:underline font-medium text-sm sm:text-base"
+							>
+								{t('pages.faq.stillHaveQuestions')} {t('pages.faq.contactUs')}
+							</Link>
 						</div>
 					</div>
 				</div>
