@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import { ArrowRight, Clock, Check, X, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe, Code } from 'lucide-react';
+import { ArrowRight, Clock, Check, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe, Code } from 'lucide-react';
 import { useNavigate, Link } from 'react-router';
 import { useAuth } from '@/contexts/auth-context';
 import { MAX_AGENT_QUERY_LENGTH, SUPPORTED_IMAGE_MIME_TYPES, type ProjectType } from '@/api-types';
@@ -382,63 +382,86 @@ export default function Landing() {
 						</h2>
 						<p className="text-base sm:text-lg text-gray-600">{t('pricing.subtitle')}</p>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
 						{/* Free Plan */}
-						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 flex flex-col h-full">
-							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.free.title')}</h3>
-							<div className="mb-4 flex items-baseline gap-2">
-								<span className="text-3xl sm:text-4xl font-bold text-gray-900">0</span>
+						<div className={clsx(
+							'bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 flex flex-col h-full',
+							isRTL && 'md:order-2'
+						)}>
+							<h3 className={clsx(
+								'text-xl sm:text-2xl font-bold text-gray-900 mb-2',
+								isRTL && 'text-right'
+							)}>
+								{t('pricing.free.title')}
+							</h3>
+							<div className={clsx(
+								'mb-4 flex items-baseline gap-2',
+								isRTL ? 'flex-row-reverse justify-end' : 'flex-row'
+							)}>
+								<span className="text-3xl sm:text-4xl font-bold text-[#1e3a5f]">{t('pricing.free.price')}</span>
 								<img src={currencyImage} alt="currency" className="h-5 sm:h-6 w-auto object-contain" />
-								<span className="text-base sm:text-lg text-gray-600">/ {isRTL ? 'شهر' : 'month'}</span>
+								<span className="text-base sm:text-lg text-gray-600">{t('pricing.free.priceUnit')}</span>
 							</div>
-							<p className="text-sm sm:text-base text-gray-600 mb-6">{t('pricing.free.desc')}</p>
-							<ul className="space-y-3 mb-6">
+							<ul className="space-y-3 mb-6 flex-1">
+								<li className="flex items-start gap-2">
+									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.platform')}</span>
+								</li>
+								<li className="flex items-start gap-2">
+									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.domain')}</span>
+								</li>
+								<li className="flex items-start gap-2">
+									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.credits')}</span>
+								</li>
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
 									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.projects')}</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.subdomain')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.ssl')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-500">{t('pricing.free.customDomain')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<X className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-500">{t('pricing.free.branding')}</span>
+									<span className="text-sm sm:text-base text-gray-700">{t('pricing.free.support')}</span>
 								</li>
 							</ul>
-							<button className="w-full bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors text-sm sm:text-base mt-auto">
+							<button className="w-full border-2 border-blue-200 bg-white text-[#1e3a5f] px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors text-sm sm:text-base mt-auto">
 								{t('pricing.free.cta')}
 							</button>
 						</div>
 
-						{/* Pro Plan */}
-						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border-2 border-[#1e3a5f] relative flex flex-col h-full">
-							<div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#1e3a5f] text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium">
-								{t('pricing.pro.popular')}
+						{/* Professional Plan */}
+						<div className={clsx(
+							'bg-white rounded-lg p-6 sm:p-8 shadow-lg border-2 border-[#1e3a5f] relative flex flex-col h-full',
+							isRTL && 'md:order-1'
+						)}>
+							<div className={clsx(
+								'absolute -top-3 bg-green-100 text-green-700 px-3 py-1 rounded-lg text-xs sm:text-sm font-medium',
+								isRTL ? 'right-4' : 'left-4'
+							)}>
+								{t('pricing.pro.recommended')}
 							</div>
-							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.pro.title')}</h3>
-							<div className="mb-4 flex items-baseline gap-2">
-								<span className="text-3xl sm:text-4xl font-bold text-gray-900">99</span>
+							<h3 className={clsx(
+								'text-xl sm:text-2xl font-bold text-gray-900 mb-2',
+								isRTL && 'text-right'
+							)}>
+								{t('pricing.pro.title')}
+							</h3>
+							<div className={clsx(
+								'mb-4 flex items-baseline gap-2',
+								isRTL ? 'flex-row-reverse justify-end' : 'flex-row'
+							)}>
+								<span className="text-3xl sm:text-4xl font-bold text-[#1e3a5f]">{t('pricing.pro.price')}</span>
 								<img src={currencyImage} alt="currency" className="h-5 sm:h-6 w-auto object-contain" />
-								<span className="text-base sm:text-lg text-gray-600">/ {isRTL ? 'شهر' : 'month'}</span>
+								<span className="text-base sm:text-lg text-gray-600">{t('pricing.pro.priceUnit')}</span>
 							</div>
-							<p className="text-sm sm:text-base text-gray-600 mb-6">{t('pricing.pro.desc')}</p>
-							<ul className="space-y-3 mb-6">
+							<ul className="space-y-3 mb-6 flex-1">
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.unlimitedProjects')}</span>
+									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.credits')}</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.unlimitedDomains')}</span>
+									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.unlimitedProjects')}</span>
 								</li>
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -450,55 +473,11 @@ export default function Landing() {
 								</li>
 								<li className="flex items-start gap-2">
 									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.analytics')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.storage')}</span>
+									<span className="text-sm sm:text-base text-gray-700">{t('pricing.pro.exportCode')}</span>
 								</li>
 							</ul>
 							<button className="w-full bg-[#1e3a5f] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#2a4f7a] transition-colors text-sm sm:text-base mt-auto">
 								{t('pricing.pro.cta')}
-							</button>
-						</div>
-
-						{/* Business Plan */}
-						<div className="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-200 flex flex-col h-full">
-							<h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{t('pricing.business.title')}</h3>
-							<div className="mb-4 flex items-baseline gap-2">
-								<span className="text-3xl sm:text-4xl font-bold text-gray-900">299</span>
-								<img src={currencyImage} alt="currency" className="h-5 sm:h-6 w-auto object-contain" />
-								<span className="text-base sm:text-lg text-gray-600">/ {isRTL ? 'شهر' : 'month'}</span>
-							</div>
-							<p className="text-sm sm:text-base text-gray-600 mb-6">{t('pricing.business.desc')}</p>
-							<ul className="space-y-3 mb-6">
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.business.allPro')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.business.unlimitedTeam')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.business.sso')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.business.sla')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.business.manager')}</span>
-								</li>
-								<li className="flex items-start gap-2">
-									<Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-									<span className="text-sm sm:text-base text-gray-700">{t('pricing.business.support')}</span>
-								</li>
-							</ul>
-							<button className="w-full bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition-colors text-sm sm:text-base mt-auto">
-								{t('pricing.business.cta')}
 							</button>
 						</div>
 					</div>
