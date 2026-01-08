@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import { ArrowRight, Clock, Check, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe, Code } from 'lucide-react';
+import { ArrowRight, Check, Shield, Monitor, Zap, Share2, Lock, MessageSquare, ShoppingBag, Calendar, LayoutDashboard, FileText, Image as ImageIcon, UtensilsCrossed, MapPin, Instagram, Youtube, Linkedin, Twitter, Globe, Code } from 'lucide-react';
 import { useNavigate, Link } from 'react-router';
 import { useAuth } from '@/contexts/auth-context';
 import { MAX_AGENT_QUERY_LENGTH, SUPPORTED_IMAGE_MIME_TYPES, type ProjectType } from '@/api-types';
@@ -150,7 +150,7 @@ export default function Landing() {
 						</p>
 					</div>
 
-					<div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8">
+					<div className="flex flex-col gap-4 mb-6 sm:mb-8">
 						<button
 							onClick={() => {
 								if (!user) {
@@ -164,14 +164,14 @@ export default function Landing() {
 									document.getElementById('hero-input')?.scrollIntoView({ behavior: 'smooth' });
 								}
 							}}
-							className="bg-[#1e3a5f] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-[#2a4f7a] transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
+							className="bg-[#1e3a5f] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium hover:bg-[#2a4f7a] transition-colors flex items-center justify-center gap-2 text-sm sm:text-base w-full sm:w-auto self-center sm:self-start"
 						>
 							{t('hero.cta')}
 							<ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
 						</button>
 						<div
 							className={clsx(
-								'flex-1 relative bg-white border border-gray-300 rounded-lg p-4 flex items-center',
+								'relative bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-5 flex flex-col min-h-[120px]',
 								isDragging && 'ring-2 ring-[#1e3a5f] ring-offset-2'
 							)}
 							{...dragHandlers}
@@ -217,24 +217,39 @@ export default function Landing() {
 									dragHandlers.onDrop(e);
 								}}
 								placeholder={t('hero.inputPlaceholder')}
-								className="w-full resize-none outline-none text-gray-800 placeholder:text-gray-400 text-sm sm:text-base min-h-[60px]"
+								className="w-full resize-none outline-none bg-transparent text-white placeholder:text-gray-400 text-sm sm:text-base min-h-[60px] flex-1 pr-20 sm:pr-24"
 							/>
-							<div className="flex items-center gap-2 flex-shrink-0 ml-2">
+							{images.length > 0 && (
+								<div className="mt-3 mb-2">
+									<ImageAttachmentPreview images={images} onRemove={removeImage} />
+								</div>
+							)}
+							<div className={clsx(
+								'flex items-center gap-2 absolute bottom-3',
+								isRTL ? 'left-3' : 'right-3'
+							)}>
 								<ImageUploadButton
 									onFilesSelected={addImages}
-									className="p-2 rounded-md hover:bg-gray-100 text-gray-600 hover:text-[#1e3a5f] transition-colors cursor-pointer"
-									iconClassName="h-5 w-5"
+									className="p-1.5 sm:p-2 rounded-md hover:bg-gray-700 text-gray-300 hover:text-white transition-colors cursor-pointer"
+									iconClassName="h-5 w-5 sm:h-6 sm:w-6"
 								/>
-								<Clock className="h-5 w-5 text-gray-400" />
+								<button
+									type="button"
+									onClick={() => {
+										if (query.trim()) {
+											handleCreateApp(query, projectMode);
+										}
+									}}
+									disabled={!query.trim()}
+									className="bg-[#1e3a5f] text-white p-1.5 sm:p-2 rounded-md hover:bg-[#2a4f7a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+									aria-label="Submit"
+								>
+									<ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+								</button>
 							</div>
 						</div>
 					</div>
 
-					{images.length > 0 && (
-						<div className="mb-6">
-							<ImageAttachmentPreview images={images} onRemove={removeImage} />
-						</div>
-					)}
 
 					<div className={clsx('flex items-center gap-2 flex-wrap justify-center', isRTL && 'flex-row-reverse')}>
 						<span className="text-sm text-gray-600">{t('hero.try')}</span>
@@ -442,7 +457,7 @@ export default function Landing() {
 								{t('pricing.pro.recommended')}
 							</div>
 							<h3 className={clsx(
-								'text-xl sm:text-2xl font-bold text-gray-900 mb-2',
+								'text-xl sm:text-2xl font-bold text-gray-900 mb-image.png2',
 								isRTL && 'text-right'
 							)}>
 								{t('pricing.pro.title')}
