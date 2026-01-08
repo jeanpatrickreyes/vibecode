@@ -171,7 +171,7 @@ export default function Landing() {
 						</button>
 						<div
 							className={clsx(
-								'relative bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-5 flex flex-col min-h-[120px]',
+								'relative bg-white border border-gray-300 rounded-lg p-4 sm:p-5 flex flex-col min-h-[120px]',
 								isDragging && 'ring-2 ring-[#1e3a5f] ring-offset-2'
 							)}
 							{...dragHandlers}
@@ -217,7 +217,7 @@ export default function Landing() {
 									dragHandlers.onDrop(e);
 								}}
 								placeholder={t('hero.inputPlaceholder')}
-								className="w-full resize-none outline-none bg-transparent text-white placeholder:text-gray-400 text-sm sm:text-base min-h-[60px] flex-1 pr-20 sm:pr-24"
+								className="w-full resize-none outline-none bg-transparent text-gray-800 placeholder:text-gray-400 text-sm sm:text-base min-h-[60px] flex-1 pr-20 sm:pr-24"
 							/>
 							{images.length > 0 && (
 								<div className="mt-3 mb-2">
@@ -230,7 +230,7 @@ export default function Landing() {
 							)}>
 								<ImageUploadButton
 									onFilesSelected={addImages}
-									className="p-1.5 sm:p-2 rounded-md hover:bg-gray-700 text-gray-300 hover:text-white transition-colors cursor-pointer"
+									className="p-1.5 sm:p-2 rounded-md hover:bg-gray-100 text-gray-600 hover:text-[#1e3a5f] transition-colors cursor-pointer"
 									iconClassName="h-5 w-5 sm:h-6 sm:w-6"
 								/>
 								<button
